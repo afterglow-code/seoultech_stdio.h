@@ -1,0 +1,50 @@
+/* 
+    scss는 기본적으로 css와 같습니다. 그러나 밑에 서술한
+    기능들을 추가로 이용할 수 있어 사용합니다. 필요한 경우
+    사용하시면 되겠습니다.
+
+
+    nesting 예시
+    div.container{
+    h4{
+        color
+    }
+
+    p{
+        color
+    }
+
+    @extend => 복붙하지 말고
+
+    함수는
+    @mixin function{
+    }
+    사용은
+    @include function()
+
+    변수 저장은
+    $main : #ff;
+*/
+
+.Home-PC{
+    height: 100vh;
+    margin: 0;
+    background: radial-gradient(50% 50% at 50% 50%, #cfecd4, rgba(255, 255, 255, 0)), 
+                radial-gradient(50% 50% at 50% 50%, #fffada, rgba(255, 255, 255, 0)), 
+                #ced7e4;
+    background-size: 200% 200%; /* 배경 크기 초기 설정 */
+    background-position: 0% 0%; /* 배경 위치 초기 설정 */
+    animation: gradientAnimation 10s ease infinite; /* 애니메이션 적용 */
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
