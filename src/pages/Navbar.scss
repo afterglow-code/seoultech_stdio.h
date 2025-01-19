@@ -1,0 +1,33 @@
+.Nav-PC{
+    display: grid;
+    height: 51px;
+    grid-template-columns: 50px 520px;
+    grid-template-rows: 1fr;
+    padding-right: 60px;
+    padding-left: 60px;
+    justify-content:space-between;
+    align-items: center;
+    border-bottom: 1px solid #486284;
+}
+
+.logo{
+    justify-content: center;
+}
+
+.Link-wrapper{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 25px;
+    padding-right: 20px;
+    padding-left: 20px;
+    text-align: center;
+
+}
+
+.Link-text
+{
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+}
+
