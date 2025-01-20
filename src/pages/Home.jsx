@@ -15,7 +15,12 @@ function Home(){
             </PC>
             
             <Mobile>
-
+                <div className="Home-Mob">
+                    <Navbar/>
+                    <div className="Mob-Main">
+                        
+                    </div>
+                </div>
             </Mobile>
         </div>
         

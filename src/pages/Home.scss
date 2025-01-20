@@ -48,3 +48,18 @@
         background-position: 0% 0%;
     }
 }
+
+.Mob-Main{
+    height: 815px;
+    margin: 0;
+    background: 
+                linear-gradient(to bottom, rgba(255, 255, 255, 0) 70%, rgba(255, 255, 255, 1) 100%),
+                radial-gradient(50% 50% at 50% 50%, #cfecd4, rgba(255, 255, 255, 0)), 
+                radial-gradient(50% 50% at 50% 50%, #fffada, rgba(255, 255, 255, 0)), 
+                #ced7e4;
+    background-size: 200% 200%; /* 배경 크기 초기 설정 */
+    background-position: 0% 0%; /* 배경 위치 초기 설정 */
+    animation: gradientAnimation 10s ease infinite; /* 애니메이션 적용 */
+
+}
+
