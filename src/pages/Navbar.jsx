@@ -2,6 +2,7 @@ import React, { Children } from "react";
 import {Link} from 'react-router-dom';
 import {Mobile, PC} from './Mediaquery.jsx';
 import './Navbar.scss';
+import '../fonts/pretendardvariable.css';
 
 function Navbar(){
     return(
@@ -21,7 +22,13 @@ function Navbar(){
             </PC>
 
             <Mobile>
-                
+                <div className="Nav-Mobile">
+                    <Link to = "/"><img src="./logo.png" className="Mob-logo"></img></Link>
+                    <Link to="/" className="Mob-link-wrap">
+                        <div className="Mob-text">지원하기</div>
+                        <img src="./Vector.svg" className="Mob-logo"></img>
+                    </Link>
+                </div>
             </Mobile>
         </div>
     )

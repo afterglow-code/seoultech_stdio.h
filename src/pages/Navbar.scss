@@ -31,3 +31,28 @@
     font-size: 14px;
 }
 
+.Nav-Mobile{
+    display: grid;
+    grid-template-columns: 50px 40px;
+    grid-template-rows: 15px;
+    padding-right: 17px;
+    padding-left: 17px;
+    padding-top: 40px;
+    padding-bottom: 17px;
+    justify-content:space-between;
+    background-color: #ffff;
+    position: fixed;
+    width: calc(100% - 34px);
+}
+
+.Mob-link-wrap{
+    text-decoration: none;
+    
+    font-size: 10px;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 34px 6px;
+    font-family: 'Pretendard Variable';
+    color: #486284;
+    letter-spacing: -0.03em;
+}
