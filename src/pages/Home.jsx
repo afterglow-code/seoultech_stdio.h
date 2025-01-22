@@ -6,11 +6,13 @@ import Navbar from "./Navbar.jsx";
 
 function Home(){
     return(
-        <div>
+        <div className="Home">
             <PC>
                 <div className="Home-PC">
                     <Navbar/>
-                    개발 시작하시면 됩니다.
+                    <div className="PC-Main">
+                        개발 시작하시면 됩니다.
+                    </div>
                 </div>
             </PC>
             
@@ -18,7 +20,20 @@ function Home(){
                 <div className="Home-Mob">
                     <Navbar/>
                     <div className="Mob-Main">
-                        
+                        <div className="Mob-Main-inline">
+                            <div className="Mob-text-wrapper">
+                                    <div className="Mob-head-sub">서울과학기술대학교</div>
+                                    <div className="Mob-head-wrapper">
+                                        <div className="Mob-head-text">스마트ICT융합공학과</div>
+                                        <div className="Mob-head-text">학술동아리</div>
+                                        <div className="Mob-head-text">stdio.h</div>
+                                    </div>
+                                    <div className="Mob-sub">stdio.h는 스마트ICT융합공학과 유일 학술동아리 입니다.<br />
+                                                            장학금 안내, 전공 스터디, 아두이노 실습 등 다양한 프로그램을 통해<br />
+                                                            동아리원과 함께 성장하는 동아리 입니다.
+                                    </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </Mobile>

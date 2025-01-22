@@ -23,7 +23,7 @@
     @include function()
 
     변수 저장은
-    $main : #ff;
+    $main : #ffff;
 */
 
 .Home-PC{
@@ -49,6 +49,11 @@
     }
 }
 
+.PC-Main{
+    display: flex;
+    justify-content: center;
+}
+
 .Mob-Main{
     height: 815px;
     margin: 0;
@@ -60,6 +65,52 @@
     background-size: 200% 200%; /* 배경 크기 초기 설정 */
     background-position: 0% 0%; /* 배경 위치 초기 설정 */
     animation: gradientAnimation 10s ease infinite; /* 애니메이션 적용 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
 }
 
+.Mob-Main-inline{
+    display: flex;
+    justify-content: flex-start;
+    padding-right: 24px;
+    padding-left: 24px;
+}
+.Mob-text-wrapper{
+    font-family: 'Pretendard Variable';
+    gap: 8px;
+    display: grid;
+    grid-template-rows: 24px 84px 45px;
+}
+
+.Mob-head-sub{
+    font-size: 10px;
+    letter-spacing: 0.5px;
+    line-height: 24px;
+    font-weight: 500;
+    font-family: 'Pretendard Variable';
+    color: #1a202c;
+    text-align: left;
+    display: inline-block;
+}
+
+.Mob-head-wrapper{
+    font-size: 24px;
+    letter-spacing: 0.5px;
+    font-family: locus_sangsang;
+    color: #1a202c;
+    text-align: left;
+    display: grid;
+    grid-template-rows: 20px 20px 20px;
+    gap: 8px;
+}
+
+.Mob-sub{
+    font-size: 10px;
+    line-height: 150%;
+    font-weight: 300;
+    font-family: 'Pretendard Variable';
+    color: #486284;
+    text-align: left;
+}

@@ -6,7 +6,7 @@ import '../fonts/pretendardvariable.css';
 
 function Navbar(){
     return(
-        <div>
+        <div className="Nav">
             <PC>
                 <div className="Nav-PC">
                     <Link to = "/"><img src="./logo.png" className="logo"></img></Link>
