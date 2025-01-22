@@ -8,4 +8,6 @@ dev에서 각 팀원별 bracnh로 pull 해서 개발.
 npm install --save-dev web-vitals 해보고 다시 npm start   
 
 폰트 사용은 사용하려는 jsx파일에   
-`import '../fonts/pretendardvariable.css';` 후 css 에서 `font-family: 'Pretendard Variable';` 속성 적용하시면 됩니다.
+`import '../fonts/pretendardvariable.css';` 후 css 에서 `font-family: 'Pretendard Variable';` 속성 적용하시면 됩니다.   
+locus_sangsang도 마찬가지로 사용하실수 있습니다.   
+`import '../fonts/pretendardvariable.css';` 여기 안에 전부 탑재해놨으니 이 파일 하나만 import 하시면 됩니다.   
