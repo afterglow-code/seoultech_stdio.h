@@ -220,11 +220,18 @@
 }
 
 .tile{
-    width: 300px;
-    height: 153px;
+    display: flex !important;
+    flex-direction: column !important;
+    width: 220px !important;
+    height: 110px !important;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    background-color: #fafbfd;
 }
 .tile-head{
-    font-size: 18px;
+    font-size: 15px;
     line-height: 150%;
     font-weight: 500;
     font-family: 'Pretendard Variable';
@@ -232,7 +239,7 @@
     text-align: center;
 }
 .tile-sub{
-    font-size: 16px;
+    font-size: 13px;
     line-height: 30px;
     font-family: 'Pretendard Variable';
     color: #486284;
@@ -240,7 +247,59 @@
 }
 
 .button{
+    padding: 20px 10px 0px 10px;
     display: flex;
     flex-direction: row;
+    gap: 5px;
     justify-content: flex-end;
+}
+.b_size{
+    height: 20px;
+    width: 20px;
+}
+
+.Alumni{
+    padding: 0px 24px 30px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+}
+
+.Alumni-head{
+    font-size: 15px;
+    letter-spacing: -0.03em;
+    line-height: 150%;
+    font-weight: 500;
+    font-family: 'Pretendard Variable';
+    color: #486284;
+    text-align: center;
+}
+.Alumni-sort{
+    height: 43px;
+    font-size: 12px;
+    letter-spacing: -0.02em;
+    line-height: 150%;
+    font-family: 'Pretendard Variable';
+    color: #1a202c;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 100px 125px 120px;
+    align-items: center;
+
+}
+
+.Alumni-info{
+    height: 43px;
+    font-size: 12px;
+    letter-spacing: -0.02em;
+    line-height: 150%;
+    font-weight: 300;
+    font-family: 'Pretendard Variable';
+    color: #486284;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 100px 130px 120px;
+    align-items: center;
+    border-top: 1px solid #90a3bf;
 }

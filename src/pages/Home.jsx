@@ -92,14 +92,13 @@ function Home(){
 
                         <Swiper
                             // install Swiper modules
-                            modules={[Navigation, Pagination]}
+                            modules={[Navigation]}
                             spaceBetween={50}
-                            slidesPerView={2}
+                            slidesPerView={'auto'}
                             navigation = {{
                                 nextEl: '.custom-next',
                                 prevEl: '.custom-prev',
                             }}
-                            pagination={{ clickable: true }}
                             onSwiper={(swiper) => console.log(swiper)}
                             onSlideChange={() => console.log('slide change')}
                             >
@@ -128,15 +127,46 @@ function Home(){
                             </SwiperSlide>
                             <div className="button">
                                 <div className="custom-prev">
-                                    <img src="./arrow-back-fill.svg" alt="Previous" />
+                                    <img className="b_size" src="./arrow-back-fill.svg" alt="Previous" />
                                 </div>
                                 <div className="custom-next">
-                                    <img src="./arrow-right-fill.svg" alt="Next" />
+                                    <img className="b_size" src="./arrow-right-fill.svg" alt="Next" />
                                 </div>
                             </div>
                         </Swiper>
                     </div>
+
+                    <div className="Alumni">
+                        <div className="Alumni-head">Alumni</div>
+
+                        <div className="Alumni-container">
+                            <div className="Alumni-sort">
+                                <div className="Alumni-name">Name</div>
+                                <div className="Alumni-contact">Contact</div>
+                                <div className="Alumni-graduate">Graduation</div>
+                            </div>
+                            <div className="Alumni-info">
+                                <div className="Alumni-info-text">김철수</div>
+                                <div className="Alumni-info-text">abc@gmail.com</div>
+                                <div className="Alumni-info-text">25.02</div>
+                            </div>
+
+                            <div className="Alumni-info">
+                                <div className="Alumni-info-text">김철수</div>
+                                <div className="Alumni-info-text">abc@gmail.com</div>
+                                <div className="Alumni-info-text">25.02</div>
+                            </div>
+
+                            <div className="Alumni-info">
+                                <div className="Alumni-info-text">김철수</div>
+                                <div className="Alumni-info-text">abc@gmail.com</div>
+                                <div className="Alumni-info-text">25.02</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
+                <div className="Mob-footer"></div>
             </Mobile>
         </div>
         
