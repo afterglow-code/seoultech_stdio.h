@@ -114,3 +114,133 @@
     color: #486284;
     text-align: left;
 }
+
+.Mob-FAQ{
+    height: 800px;
+    padding: 150px 20px 0px 20px;
+    background: linear-gradient(180deg, #fafbfd, #fff);
+}
+
+.Mob-FAQ-inline{
+    gap: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.FAQ-title{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.FAQ-title-head{
+    font-size: 16px;
+    line-height: 120%;
+    font-weight: 600;
+    font-family: 'Pretendard Variable';
+    color: #486284;
+    text-align: center;
+}
+
+.FAQ-title-sub{
+    font-size: 12px;
+    line-height: 150%;
+    font-weight: 300;
+    font-family: 'Pretendard Variable';
+    color: #486284;
+    text-align: center;
+}
+
+.FAQ-item{
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid rgba(72, 98, 132, 0.5);
+}
+
+.Q{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px 0px 20px 0px;
+
+    font-size: 13px;
+    line-height: 150%;
+    font-weight: 500;
+    font-family: 'Pretendard Variable';
+    color: #1a202c;
+    text-align: left;
+}
+
+.Q-arrow{
+    position: relative;
+    width: 20px;
+    height: 20px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.Q-arrow.rotate{
+    transform: rotate(180deg);
+}
+
+.A{
+    font-size: 12px;
+    line-height: 150%;
+    font-family: 'Pretendard Variable';
+    color: #486284;
+    text-align: left;
+    padding-bottom: 20px;
+}
+
+.Achieve{
+    height: 322px;
+}
+
+.Achieve-Head{
+    font-size: 15px;
+    line-height: 50px;
+    font-weight: 500;
+    font-family: 'Pretendard Variable';
+    color: #486284;
+    text-align: center;
+}
+
+.Achieve-Sub{
+    font-size: 12px;
+    line-height: 150%;
+    font-weight: 300;
+    font-family: 'Pretendard Variable';
+    color: #486284;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 67px;
+
+}
+
+.tile{
+    width: 300px;
+    height: 153px;
+}
+.tile-head{
+    font-size: 18px;
+    line-height: 150%;
+    font-weight: 500;
+    font-family: 'Pretendard Variable';
+    color: #486284;
+    text-align: center;
+}
+.tile-sub{
+    font-size: 16px;
+    line-height: 30px;
+    font-family: 'Pretendard Variable';
+    color: #486284;
+    text-align: center;
+}
+
+.button{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
