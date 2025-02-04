@@ -44,6 +44,7 @@ function Home(){
             <Mobile>
                 <div className="Home-Mob">
                     <Navbar/>
+                    {/* 홈 */}
                     <div className="Mob-Main">
                         <div className="Mob-Main-inline">
                             <div className="Mob-text-wrapper">
@@ -60,7 +61,7 @@ function Home(){
                             </div>
                         </div>
                     </div>
-
+                    {/* FAQ 시작입니다 */}
                     <div className="Mob-FAQ">
                         <div className="Mob-FAQ-inline">
                             <div className="FAQ-title">
@@ -75,17 +76,17 @@ function Home(){
                                             <div className="Q-text">{faq.question}</div>
                                             <img src="./top.svg" className={`Q-arrow ${openFAQ[index] ? '' : 'rotate'}`}/>
                                         </div>
-                                        {openFAQ[index] && (
-                                            <div className="A">
-                                                <div className="A-text">{faq.answer}</div>
-                                            </div>
-                                        )}
+                                        
+                                        <div className={`A ${openFAQ[index] ? 'open' : 'close'}`}>
+                                            <div className="A-text">{faq.answer}</div>
+                                        </div>
+                                        
                                     </div>
                                 ))}
                             </div>
                         </div>
                     </div>
-
+                    {/* Achieve 시작입니다 */}
                     <div className="Achieve">
                         <div className="Achieve-Head">stdio.h의 기록</div>
                         <div className="Achieve-Sub">동아리원들이 함께 협동해서 이룬 성과들 입니다</div>
@@ -135,7 +136,7 @@ function Home(){
                             </div>
                         </Swiper>
                     </div>
-
+                    {/* 졸업생 시작입니다 */}
                     <div className="Alumni">
                         <div className="Alumni-head">Alumni</div>
 
@@ -164,9 +165,16 @@ function Home(){
                             </div>
                         </div>
                     </div>
-                </div>
+                    {/* Footer 시작입니다 */}
+                    <div className="Mob-footer">
+                        <img src="./logo.png" className="footer-logo"></img>
+                        <div className="box">
+                            <div className="contact">회장 장세영<br/>010-7352-2030</div>
+                            <div className="noti">© 2025 stdio.h. All Right Reserved.</div>
+                        </div>
+                    </div>
 
-                <div className="Mob-footer"></div>
+                </div>                
             </Mobile>
         </div>
         

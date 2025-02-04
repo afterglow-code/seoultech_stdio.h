@@ -26,6 +26,7 @@
     $main : #ffff;
 */
 
+//PC 시작
 .Home-PC{
     height: 100vh;
     margin: 0;
@@ -54,6 +55,7 @@
     justify-content: center;
 }
 
+//모바일 시작
 .Mob-Main{
     height: 815px;
     margin: 0;
@@ -115,6 +117,7 @@
     text-align: left;
 }
 
+//FAQ 페이지 시작
 .Mob-FAQ{
     height: 800px;
     padding: 150px 20px 0px 20px;
@@ -190,8 +193,39 @@
     color: #486284;
     text-align: left;
     padding-bottom: 20px;
+    overflow: hidden;
 }
 
+@keyframes fadeIn {
+    from {
+      max-height: 0;
+      opacity: 0;
+    }
+    to {
+      max-height: 200px; 
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeOut {
+    from {
+      max-height: 200px;
+      opacity: 1;
+    }
+    to {
+      max-height: 0;
+      opacity: 0;
+    }
+  }
+.A.open {
+    animation: fadeIn 1s ease-in-out forwards;
+  }
+  
+  .A.close {
+    animation: fadeOut 0.7s ease-in-out forwards;
+  }
+
+//아카이브 페이지 시작
 .Achieve{
     height: 322px;
 }
@@ -258,6 +292,7 @@
     width: 20px;
 }
 
+//Alumni 시작
 .Alumni{
     padding: 0px 24px 30px 24px;
     display: flex;
@@ -286,6 +321,7 @@
     display: grid;
     grid-template-columns: 100px 125px 120px;
     align-items: center;
+    justify-content: center;
 
 }
 
@@ -301,5 +337,46 @@
     display: grid;
     grid-template-columns: 100px 130px 120px;
     align-items: center;
+    justify-content: center;
     border-top: 1px solid #90a3bf;
+}
+
+//Footer 추후에 컴포넌트화 해서 이동 예정
+.Mob-footer{
+    height: 140px;
+    padding: 30px 20px 0px 20px;
+    background-color: #d3dce7;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.footer-logo{
+    width: 50px;
+    height: 14.5px;
+}
+.box{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 5px;
+    text-align: left;
+}
+.contact{
+    font-size: 13px;
+    letter-spacing: -0.02em;
+    line-height: 150%;
+    font-family: 'Pretendard Variable';
+    color: #1a202c;
+}
+
+.noti{
+    position: relative;
+    font-size: 11px;
+    line-height: 150%;
+    font-weight: 300;
+    font-family: 'Pretendard Variable';
+    color: #486284;
+    text-align: left;
 }
