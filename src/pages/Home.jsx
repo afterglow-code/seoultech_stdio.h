@@ -13,7 +13,7 @@ import 'swiper/css/pagination';
 
 
 function Home(){
-
+    {/* 질문, 수상, 졸업 관련 배열 */}
     const FAQData = [
         { question: "동아리 가입 방법은?", answer: "동아리 지원하기를 통해 지원하시면 연락드리겠습니다." },
         { question: "동아리 회비는?", answer: "동아리 회비는 없습니다.\n다만, 대회 참여, 자재 구입 등 불가피한 경우 활동에 참여한 인원들과 금액을 분담할 수 있습니다." },
@@ -21,6 +21,21 @@ function Home(){
         { question: "지원 자격은?", answer: "스마트ICT융합공학과 또는 전자IT미디어공학과(미디어트랙) 학생(학년무관)이면 누구나 가능합니다!" },
         { question: "활동 소식은 어디서?", answer: "동아리의 활동 소식은 이 페이지 Achive 탭이나 네이버 카페를 참조해주세요." }
     ];
+
+    const AlumniData = [
+        {name: "김철수", contact: "123@gmail.com", year: "2025.02"},
+        {name: "김철수", contact: "123@gmail.com", year: "2025.02"},
+        {name: "김철수", contact: "123@gmail.com", year: "2025.02"},
+    ]
+
+    const AchieveData = [
+        {name: "2023 RE-UP Cycle Thon\n(GREEN TECH MAKER)", prize: "최우수상 수상"},
+        {name: "2023 RE-UP Cycle Thon\n(GREEN TECH MAKER)", prize: "최우수상 수상"},
+        {name: "2023 RE-UP Cycle Thon\n(GREEN TECH MAKER)", prize: "최우수상 수상"},
+        {name: "2023 RE-UP Cycle Thon\n(GREEN TECH MAKER)", prize: "최우수상 수상"},
+        {name: "2023 RE-UP Cycle Thon\n(GREEN TECH MAKER)", prize: "최우수상 수상"},
+    ]
+    {/* FAQ open state */}
     const [openFAQ, setOpenFAQ] = useState(Array(FAQData.length).fill(true));
     const toggleFAQ = (index) =>{
         setOpenFAQ(prev => {
@@ -86,6 +101,7 @@ function Home(){
                             </div>
                         </div>
                     </div>
+        
                     {/* Achieve 시작입니다 */}
                     <div className="Achieve">
                         <div className="Achieve-Head">stdio.h의 기록</div>
@@ -103,29 +119,14 @@ function Home(){
                             onSwiper={(swiper) => console.log(swiper)}
                             onSlideChange={() => console.log('slide change')}
                             >
-                            <SwiperSlide className="tile">
-                                <div className="tile-head">2023 RE-UP Cycle Thon
-                                (GREEN TECH MAKER)</div>
-                                <div className="tile-sub">최우수상 수상</div>
-                            </SwiperSlide>
+                            
+                            {AchieveData.map((ac) => (
+                                <SwiperSlide className="tile">
+                                    <div className="tile-head">{ac.name}</div>
+                                    <div className="tile-sub">{ac.prize}</div>
+                                </SwiperSlide>
+                            ))}
 
-                            <SwiperSlide className="tile">
-                                <div className="tile-head">2023 RE-UP Cycle Thon
-                                (GREEN TECH MAKER)</div>
-                                <div className="tile-sub">최우수상 수상</div>
-                            </SwiperSlide>
-
-                            <SwiperSlide className="tile">
-                                <div className="tile-head">2023 RE-UP Cycle Thon
-                                    (GREEN TECH MAKER)</div>
-                                <div className="tile-sub">최우수상 수상</div>
-                            </SwiperSlide>
-
-                            <SwiperSlide className="tile">
-                                <div className="tile-head">2023 RE-UP Cycle Thon
-                                (GREEN TECH MAKER)</div>
-                                <div className="tile-sub">최우수상 수상</div>
-                            </SwiperSlide>
                             <div className="button">
                                 <div className="custom-prev">
                                     <img className="b_size" src="./arrow-back-fill.svg" alt="Previous" />
@@ -141,28 +142,13 @@ function Home(){
                         <div className="Alumni-head">Alumni</div>
 
                         <div className="Alumni-container">
-                            <div className="Alumni-sort">
-                                <div className="Alumni-name">Name</div>
-                                <div className="Alumni-contact">Contact</div>
-                                <div className="Alumni-graduate">Graduation</div>
-                            </div>
-                            <div className="Alumni-info">
-                                <div className="Alumni-info-text">김철수</div>
-                                <div className="Alumni-info-text">abc@gmail.com</div>
-                                <div className="Alumni-info-text">25.02</div>
-                            </div>
-
-                            <div className="Alumni-info">
-                                <div className="Alumni-info-text">김철수</div>
-                                <div className="Alumni-info-text">abc@gmail.com</div>
-                                <div className="Alumni-info-text">25.02</div>
-                            </div>
-
-                            <div className="Alumni-info">
-                                <div className="Alumni-info-text">김철수</div>
-                                <div className="Alumni-info-text">abc@gmail.com</div>
-                                <div className="Alumni-info-text">25.02</div>
-                            </div>
+                            {AlumniData.map((al) =>(
+                                <div className="Alumni-info">
+                                    <div className="Alumni-info-text">{al.name}</div>
+                                    <div className="Alumni-info-text">{al.contact}</div>
+                                    <div className="Alumni-info-text">{al.year}</div>
+                                </div>
+                            ))}
                         </div>
                     </div>
                     {/* Footer 시작입니다 */}
