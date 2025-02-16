@@ -13,7 +13,7 @@ import 'swiper/css/pagination';
 
 
 function Home(){
-    {/* 질문, 수상, 졸업 관련 배열 */}
+    {/* 질문, 수상, 졸업 관련 */}
     const FAQData = [
         { question: "동아리 가입 방법은?", answer: "동아리 지원하기를 통해 지원하시면 연락드리겠습니다." },
         { question: "동아리 회비는?", answer: "동아리 회비는 없습니다.\n다만, 대회 참여, 자재 구입 등 불가피한 경우 활동에 참여한 인원들과 금액을 분담할 수 있습니다." },
