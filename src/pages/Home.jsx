@@ -1,9 +1,11 @@
-import React, {useState} from "react";
+import React, {useState, useRef} from "react";
 import {Link} from 'react-router-dom';
 import './Home.scss';
 
 import {Mobile, PC} from './Mediaquery.jsx';
 import Navbar from "./Navbar.jsx";
+import Footer from "./Footer.jsx";
+import { FAQData, AlumniData, AchieveData } from "./data.js";
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
@@ -13,28 +15,6 @@ import 'swiper/css/pagination';
 
 
 function Home(){
-    {/* 질문, 수상, 졸업 관련 배열 */}
-    const FAQData = [
-        { question: "동아리 가입 방법은?", answer: "동아리 지원하기를 통해 지원하시면 연락드리겠습니다." },
-        { question: "동아리 회비는?", answer: "동아리 회비는 없습니다.\n다만, 대회 참여, 자재 구입 등 불가피한 경우 활동에 참여한 인원들과 금액을 분담할 수 있습니다." },
-        { question: "경험이 없어도 프로젝트(대회) 참여가 가능한가요?", answer: "그럼요! stdio.h의 모든 활동은 학년, 경험 등에 제한을 두지 않습니다.\n하고싶다는 의지 하나면 충분합니다!" },
-        { question: "지원 자격은?", answer: "스마트ICT융합공학과 또는 전자IT미디어공학과(미디어트랙) 학생(학년무관)이면 누구나 가능합니다!" },
-        { question: "활동 소식은 어디서?", answer: "동아리의 활동 소식은 이 페이지 Achive 탭이나 네이버 카페를 참조해주세요." }
-    ];
-
-    const AlumniData = [
-        {name: "김철수", contact: "123@gmail.com", year: "2025.02"},
-        {name: "김철수", contact: "123@gmail.com", year: "2025.02"},
-        {name: "김철수", contact: "123@gmail.com", year: "2025.02"},
-    ]
-
-    const AchieveData = [
-        {name: "2023 RE-UP Cycle Thon\n(GREEN TECH MAKER)", prize: "최우수상 수상"},
-        {name: "2023 RE-UP Cycle Thon\n(GREEN TECH MAKER)", prize: "최우수상 수상"},
-        {name: "2023 RE-UP Cycle Thon\n(GREEN TECH MAKER)", prize: "최우수상 수상"},
-        {name: "2023 RE-UP Cycle Thon\n(GREEN TECH MAKER)", prize: "최우수상 수상"},
-        {name: "2023 RE-UP Cycle Thon\n(GREEN TECH MAKER)", prize: "최우수상 수상"},
-    ]
     {/* FAQ open state */}
     const [openFAQ, setOpenFAQ] = useState(Array(FAQData.length).fill(true));
     const toggleFAQ = (index) =>{
@@ -45,14 +25,100 @@ function Home(){
         });
     };
 
+    const homeRef = useRef(null);
+    const alumniRef = useRef(null);
+    const aboutUsRef = useRef(null);
+    const faqRef = useRef(null);
+    const achieveRef = useRef(null);
+
     return(
         <div className="Home">
             <PC>
                 <div className="Home-PC">
-                    <Navbar/>
-                    <div className="PC-Main">
-                        개발 시작하시면 됩니다.
+                    <Navbar refs={{ homeRef, alumniRef, aboutUsRef, faqRef, achieveRef }}/>
+                    {/* Land */}
+                    <div ref={homeRef} className="Land">
+                        <div>1번, 2번</div>
                     </div>
+                    {/* About us 시작입니다 */}
+
+                    {/* q&a 시작입니다 */}
+
+                    {/* Achieve 시작입니다 */}
+                    <div ref={achieveRef} className="PC-Achieve">
+                        <div className="Head">stdio.h의 기록</div>
+                        <div className="Head-sub">동아리원들이 함께 협동해서 이룬 성과들 입니다</div>
+
+                        <Swiper
+                            // install Swiper modules
+                            className="PC-swiper"
+                            modules={[Navigation]}
+                            spaceBetween={50}
+                            slidesPerView={'auto'}
+                            navigation = {{
+                                nextEl: '.custom-next',
+                                prevEl: '.custom-prev',
+                            }}
+                            onSwiper={(swiper) => console.log(swiper)}
+                            onSlideChange={() => console.log('slide change')}
+                            >
+                            
+                            {AchieveData.map((ac) => (
+                                <SwiperSlide className="pc-tile">
+                                    <div className="pc-tile-head">
+                                        {ac.name.split("\n").map((line, idx) => (
+                                            <React.Fragment key={idx}>
+                                                {line}
+                                                <br />
+                                            </React.Fragment>
+                                        ))}
+                                    </div>
+                                    <div className="pc-tile-sub">
+                                        {ac.prize.split("\n").map((line, idx) => (
+                                            <React.Fragment key={idx}>
+                                                {line}
+                                                <br />
+                                            </React.Fragment>
+                                        ))}
+                                    </div>
+                                </SwiperSlide>
+                            ))}
+
+                            <div className="pc-button">
+                                <div className="custom-prev">
+                                    <img className="pc-b_size" src="./arrow-back-fill.svg" alt="Previous" />
+                                </div>
+                                <div className="custom-next">
+                                    <img className="pc-b_size" src="./arrow-right-fill.svg" alt="Next" />
+                                </div>
+                            </div>
+                        </Swiper>
+                    </div>
+                    {/* Alumni 시작입니다 */}
+                    <div ref={alumniRef} className="pc-Alumni">
+                            <div className="pc-Alumni-head">Alumni</div>
+
+                            <div className="pc-Alumni-container">
+
+                                <div className="pc-Alumni-info-head">
+                                                <div className="te">Name</div>
+                                                <div className="te">Contact</div>
+                                                <div className="te">Major</div>
+                                                <div className="te">Graduation</div>
+                                            </div>
+
+                                {AlumniData.map((al) =>(
+                                    <div className="pc-Alumni-info">
+                                        <div className="pc-Alumni-info-text">{al.name}</div>
+                                        <div className="pc-Alumni-info-text">{al.contact}</div>
+                                        <div className="pc-Alumni-info-text">{al.major}</div>
+                                        <div className="pc-Alumni-info-text">{al.year}</div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+
+                    <Footer/>
                 </div>
             </PC>
             
@@ -88,12 +154,26 @@ function Home(){
                                 {FAQData.map((faq, index) => (
                                     <div className="FAQ-item" key={index}>
                                         <div className="Q" onClick={() => toggleFAQ(index)}>
-                                            <div className="Q-text">{faq.question}</div>
+                                            <div className="Q-text">
+                                                {faq.question.split("\n").map((line, idx) => (
+                                                    <React.Fragment key={idx}>
+                                                        {line}
+                                                        <br />
+                                                    </React.Fragment>
+                                                ))}
+                                            </div>
                                             <img src="./top.svg" className={`Q-arrow ${openFAQ[index] ? '' : 'rotate'}`}/>
                                         </div>
                                         
                                         <div className={`A ${openFAQ[index] ? 'open' : 'close'}`}>
-                                            <div className="A-text">{faq.answer}</div>
+                                            <div className="A-text">
+                                                {faq.answer.split("\n").map((line, idx) => (
+                                                        <React.Fragment key={idx}>
+                                                            {line}
+                                                            <br />
+                                                        </React.Fragment>
+                                                ))}
+                                            </div>
                                         </div>
                                         
                                     </div>
@@ -122,8 +202,22 @@ function Home(){
                             
                             {AchieveData.map((ac) => (
                                 <SwiperSlide className="tile">
-                                    <div className="tile-head">{ac.name}</div>
-                                    <div className="tile-sub">{ac.prize}</div>
+                                    <div className="tile-head">
+                                        {ac.name.split("\n").map((line, idx) => (
+                                            <React.Fragment key={idx}>
+                                                {line}
+                                                <br />
+                                            </React.Fragment>
+                                        ))}
+                                    </div>
+                                    <div className="tile-sub">
+                                        {ac.prize.split("\n").map((line, idx) => (
+                                            <React.Fragment key={idx}>
+                                                {line}
+                                                <br />
+                                            </React.Fragment>
+                                        ))}
+                                    </div>
                                 </SwiperSlide>
                             ))}
 
@@ -142,6 +236,12 @@ function Home(){
                         <div className="Alumni-head">Alumni</div>
 
                         <div className="Alumni-container">
+                            <div className="Alumni-info-head">
+                                <div className="te">Name</div>
+                                <div className="te">Contact</div>
+                                <div className="te">Graduation</div>
+                            </div>
+
                             {AlumniData.map((al) =>(
                                 <div className="Alumni-info">
                                     <div className="Alumni-info-text">{al.name}</div>
@@ -151,14 +251,8 @@ function Home(){
                             ))}
                         </div>
                     </div>
-                    {/* Footer 시작입니다 */}
-                    <div className="Mob-footer">
-                        <img src="./logo.png" className="footer-logo"></img>
-                        <div className="box">
-                            <div className="contact">회장 장세영<br/>010-7352-2030</div>
-                            <div className="noti">© 2025 stdio.h. All Right Reserved.</div>
-                        </div>
-                    </div>
+
+                    <Footer/>
 
                 </div>                
             </Mobile>
