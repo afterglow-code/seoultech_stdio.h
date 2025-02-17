@@ -5,6 +5,7 @@ import './Navbar.scss';
 import '../fonts/pretendardvariable.css';
 
 function Navbar(){
+
     return(
         <div className="Nav">
             <PC>
@@ -15,7 +16,7 @@ function Navbar(){
                         <Link to="/" className="Link-text">Alumni</Link>
                         <Link to="/" className="Link-text">About Us</Link>
                         <Link to="/" className="Link-text">Q&A</Link>
-                        <Link to="/" className="Link-text">Achieve</Link>
+                        <Link to="/Achieve" className="Link-text">Achieve</Link>
                         <Link to="/" className="Link-text">지원하기</Link>
                     </div>
                 </div>

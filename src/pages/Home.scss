@@ -27,7 +27,7 @@
 */
 
 //PC 시작
-.Home-PC{
+.Land{
     height: 100vh;
     margin: 0;
     background: radial-gradient(50% 50% at 50% 50%, #cfecd4, rgba(255, 255, 255, 0)), 
@@ -50,9 +50,133 @@
     }
 }
 
-.PC-Main{
-    display: flex;
+
+//PC Achieve 시작
+.PC-Achieve{
+    background-color: #fff;
+    height: 1150px;
+    position: relative;
+    z-index: 0;
+}
+
+.Head{
+    position: relative;
+    top: 130px;
+    font-size: 24px;
+    line-height: 50px;
+    font-weight: 600;
+    font-family: 'Pretendard Variable';
+    color: #486284;
+    text-align: center;
+}
+
+.Head-sub{
+    position: relative;
+    top: 205px;
+    font-size: 16px;
+    line-height: 150%;
+    color: #1a202c;
+    text-align: center;
+}
+
+.PC-swiper{
+    top: 300px;
+}
+
+
+.pc-tile{
+    display: flex !important;
+    flex-direction: column !important;
+    width: 25rem !important;
+    height: 14.375rem !important;
     justify-content: center;
+    align-items: center;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    background-color: #fafbfd;
+}
+.pc-tile-head{
+    font-size: 18px;
+    line-height: 150%;
+    font-weight: 500;
+    font-family: 'Pretendard Variable';
+    color: #486284;
+    text-align: center;
+}
+.pc-tile-sub{
+    font-size: 16px;
+    line-height: 30px;
+    font-family: 'Pretendard Variable';
+    color: #486284;
+    text-align: center;
+}
+
+.pc-button{
+    padding: 20px 10px 0px 10px;
+    display: flex;
+    flex-direction: row;
+    gap: 45px;
+    justify-content: flex-end;
+}
+.pc-b_size{
+    height: 20px;
+    width: 20px;
+}
+
+.pc-Alumni{
+    position: relative;
+    top: 400px;
+    padding: 0px 24px 30px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+
+}
+.pc-Alumni-container{
+    width: 1000px;
+}
+
+.pc-Alumni-head{
+    font-size: 15px;
+    letter-spacing: -0.03em;
+    line-height: 150%;
+    font-weight: 500;
+    font-family: 'Pretendard Variable';
+    color: #486284;
+    text-align: center;
+}
+
+
+.pc-Alumni-info-head{
+    height: 43px;
+    font-size: 12px;
+    letter-spacing: -0.02em;
+    line-height: 150%;
+    font-weight: 300;
+    font-family: 'Pretendard Variable';
+    color: #1a202c;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 100px 130px 140px 120px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.pc-Alumni-info{
+    height: 43px;
+    font-size: 12px;
+    letter-spacing: -0.02em;
+    line-height: 150%;
+    font-weight: 300;
+    font-family: 'Pretendard Variable';
+    color: #486284;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 100px 130px 140px 120px;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid #90a3bf;
 }
 
 //모바일 시작
@@ -325,6 +449,21 @@
 
 }
 
+.Alumni-info-head{
+    height: 43px;
+    font-size: 12px;
+    letter-spacing: -0.02em;
+    line-height: 150%;
+    font-weight: 300;
+    font-family: 'Pretendard Variable';
+    color: #1a202c;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 100px 130px 120px;
+    align-items: center;
+    justify-content: center;
+}
+
 .Alumni-info{
     height: 43px;
     font-size: 12px;
@@ -339,44 +478,4 @@
     align-items: center;
     justify-content: center;
     border-top: 1px solid #90a3bf;
-}
-
-//Footer 추후에 컴포넌트화 해서 이동 예정
-.Mob-footer{
-    height: 140px;
-    padding: 30px 20px 0px 20px;
-    background-color: #d3dce7;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.footer-logo{
-    width: 50px;
-    height: 14.5px;
-}
-.box{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    gap: 5px;
-    text-align: left;
-}
-.contact{
-    font-size: 13px;
-    letter-spacing: -0.02em;
-    line-height: 150%;
-    font-family: 'Pretendard Variable';
-    color: #1a202c;
-}
-
-.noti{
-    position: relative;
-    font-size: 11px;
-    line-height: 150%;
-    font-weight: 300;
-    font-family: 'Pretendard Variable';
-    color: #486284;
-    text-align: left;
 }
