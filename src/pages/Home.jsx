@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useRef} from "react";
 import {Link} from 'react-router-dom';
 import './Home.scss';
 
@@ -25,13 +25,19 @@ function Home(){
         });
     };
 
+    const homeRef = useRef(null);
+    const alumniRef = useRef(null);
+    const aboutUsRef = useRef(null);
+    const faqRef = useRef(null);
+    const achieveRef = useRef(null);
+
     return(
         <div className="Home">
             <PC>
                 <div className="Home-PC">
-                    <Navbar/>
+                    <Navbar refs={{ homeRef, alumniRef, aboutUsRef, faqRef, achieveRef }}/>
                     {/* Land */}
-                    <div className="Land">
+                    <div ref={homeRef} className="Land">
                         <div>1번, 2번</div>
                     </div>
                     {/* About us 시작입니다 */}
@@ -39,7 +45,7 @@ function Home(){
                     {/* q&a 시작입니다 */}
 
                     {/* Achieve 시작입니다 */}
-                    <div className="PC-Achieve">
+                    <div ref={achieveRef} className="PC-Achieve">
                         <div className="Head">stdio.h의 기록</div>
                         <div className="Head-sub">동아리원들이 함께 협동해서 이룬 성과들 입니다</div>
 
@@ -87,8 +93,9 @@ function Home(){
                                 </div>
                             </div>
                         </Swiper>
-
-                        <div className="pc-Alumni">
+                    </div>
+                    {/* Alumni 시작입니다 */}
+                    <div ref={alumniRef} className="pc-Alumni">
                             <div className="pc-Alumni-head">Alumni</div>
 
                             <div className="pc-Alumni-container">
@@ -110,7 +117,6 @@ function Home(){
                                 ))}
                             </div>
                         </div>
-                    </div>
 
                     <Footer/>
                 </div>
