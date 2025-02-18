@@ -1,4 +1,4 @@
-import React, { Children } from "react";
+import React, { useState, useEffect} from "react";
 import {Link} from 'react-router-dom';
 import {Mobile, PC} from './Mediaquery.jsx';
 import './Navbar.scss';
@@ -11,10 +11,27 @@ function Navbar({ refs }){
             behavior: 'smooth'
         });
     };
+    const [isScrolled, setIsScrolled] = useState(false);
+    useEffect(() => {
+        const handleScroll = () => {
+            const landHeight = refs.homeRef.current.offsetHeight;
+            if (window.scrollY > landHeight) {
+                setIsScrolled(true);
+            } else {
+                setIsScrolled(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, [refs.homeRef]);
+
     return(
         <div className="Nav">
             <PC>
-                <div className="Nav-PC">
+                <div className={`Nav-PC ${isScrolled ? 'scrolled' : ''}`}>
                     <Link to = "/" onClick={() => scrollToRef(refs.homeRef)}><img src="./logo.png" className="logo"></img></Link>
                     <div className="Link-wrapper">
                         <Link to="/" className="Link-text" onClick={() => scrollToRef(refs.homeRef)}>Home</Link>
