@@ -3,8 +3,15 @@ import {Link,} from 'react-router-dom';
 import {Mobile, PC} from './Mediaquery.jsx';
 import './Footer.scss';
 
-function Footer(){
-
+function Footer({refs}){
+    const scrollToRef = (ref) => {
+        if (ref && ref.current) {
+            window.scrollTo({
+                top: ref.current.offsetTop,
+                behavior: 'smooth'
+            });
+        }
+    };
     return(
         <div className="Footer">
             <PC>
@@ -18,11 +25,11 @@ function Footer(){
                         <div className="pc-right-box">
                             <div className="about">About</div>
                             <div className="list">
-                                <div className="list-text">Home</div>
-                                <div className="list-text">Alumni</div>
-                                <div className="list-text">About Us</div>
-                                <div className="list-text">Q&A</div>
-                                <div className="list-text">Achieve</div>
+                                <div className="list-text" onClick={() => scrollToRef(refs.homeRef)}>Home</div>
+                                <div className="list-text" onClick={() => scrollToRef(refs.alumniRef)}>Alumni</div>
+                                <div className="list-text" onClick={() => scrollToRef(refs.aboutUsRef)}>About Us</div>
+                                <div className="list-text" onClick={() => scrollToRef(refs.faqRef)}>Q&A</div>
+                                <div className="list-text" onClick={() => scrollToRef(refs.achieveRef)}>Achieve</div>
                             </div>
                         </div>
                     </div>
@@ -35,7 +42,7 @@ function Footer(){
 
             <Mobile>
                 <div className="Mob-footer">
-                    <img src="./logo.png" className="Mob-footer-logo"></img>
+                    <img src="./logo.png" className="Mob-footer-logo" onClick={() => scrollToRef(refs.homeRef)}></img>
                     <div className="Mob-box">
                         <div className="Mob-contact">회장 장세영<br/>010-7352-2030</div>
                         <div className="Mob-noti">© 2025 stdio.h. All Right Reserved.</div>
