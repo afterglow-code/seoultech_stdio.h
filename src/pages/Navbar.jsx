@@ -46,7 +46,7 @@ function Navbar({ refs }){
 
             <Mobile>
                 <div className="Nav-Mobile">
-                    <Link to = "/"><img src="./logo.png" className="Mob-logo"></img></Link>
+                    <Link to = "/" onClick={() => scrollToRef(refs.homeRef)}><img src="./logo.png" className="Mob-logo"></img></Link>
                     <Link to="/" className="Mob-link-wrap">
                         <div className="Mob-text">지원하기</div>
                         <img src="./Vector.svg" className="Mob-logo"></img>
