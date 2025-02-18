@@ -28,21 +28,9 @@ function Navbar({ refs }){
             }
         };
 
-        const handleResize = () => {
-            if (refs.homeRef && refs.homeRef.current) {
-                // Recalculate offsetTop on resize
-                const offsetTop = refs.homeRef.current.offsetTop;
-                //console.log('OffsetTop recalculated:', offsetTop);
-                scrollToRef(refs.homeRef);
-            }
-        };
-
         window.addEventListener('scroll', handleScroll);
-        window.addEventListener('resize', handleResize);
-
         return () => {
             window.removeEventListener('scroll', handleScroll);
-            window.removeEventListener('resize', handleResize);
         };
     }, [refs]);
 
