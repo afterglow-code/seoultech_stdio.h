@@ -124,9 +124,9 @@ function Home(){
             
             <Mobile>
                 <div className="Home-Mob">
-                    <Navbar/>
+                    <Navbar refs={{ homeRef, alumniRef, aboutUsRef, faqRef, achieveRef }}/>
                     {/* 홈 */}
-                    <div className="Mob-Main">
+                    <div className="Mob-Main" ref={homeRef}>
                         <div className="Mob-Main-inline">
                             <div className="Mob-text-wrapper">
                                     <div className="Mob-head-sub">서울과학기술대학교</div>
