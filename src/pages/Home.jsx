@@ -1,5 +1,6 @@
-import React, {useState, useRef} from "react";
+import React, {useState, useRef, useEffect} from "react";
 import {Link} from 'react-router-dom';
+import { useMediaQuery } from "react-responsive";
 import './Home.scss';
 
 import {Mobile, PC} from './Mediaquery.jsx';
@@ -24,12 +25,19 @@ function Home(){
             return newFAQ;
         });
     };
-
-    const homeRef = useRef(null);
+    const isPc = useMediaQuery({ minWidth: 768 });
+    const pcHomeRef = useRef(null);
+    const mobHomeRef = useRef(null);
     const alumniRef = useRef(null);
     const aboutUsRef = useRef(null);
     const faqRef = useRef(null);
     const achieveRef = useRef(null);
+
+    const [homeRef, setHomeRef] = useState(pcHomeRef);
+    useEffect(() => {
+        // 화면 크기 변경될 때마다 ref 변경
+        setHomeRef(isPc ? pcHomeRef : mobHomeRef);
+    }, [isPc]);
 
     return(
         <div className="Home">
@@ -37,7 +45,7 @@ function Home(){
                 <div className="Home-PC">
                     <Navbar refs={{ homeRef, alumniRef, aboutUsRef, faqRef, achieveRef }}/>
                     {/* Land */}
-                    <div ref={homeRef} className="Land">
+                    <div ref={pcHomeRef} className="Land">
                         <div>1번, 2번</div>
                     </div>
                     {/* About us 시작입니다 */}
@@ -118,7 +126,7 @@ function Home(){
                             </div>
                         </div>
 
-                    <Footer/>
+                    <Footer refs={{ homeRef, alumniRef, aboutUsRef, faqRef, achieveRef }}/>
                 </div>
             </PC>
             
@@ -126,7 +134,7 @@ function Home(){
                 <div className="Home-Mob">
                     <Navbar refs={{ homeRef, alumniRef, aboutUsRef, faqRef, achieveRef }}/>
                     {/* 홈 */}
-                    <div className="Mob-Main" ref={homeRef}>
+                    <div className="Mob-Main" ref={mobHomeRef}>
                         <div className="Mob-Main-inline">
                             <div className="Mob-text-wrapper">
                                     <div className="Mob-head-sub">서울과학기술대학교</div>
@@ -252,7 +260,7 @@ function Home(){
                         </div>
                     </div>
 
-                    <Footer/>
+                    <Footer refs={{ homeRef, alumniRef, aboutUsRef, faqRef, achieveRef }}/>
 
                 </div>                
             </Mobile>

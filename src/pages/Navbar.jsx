@@ -6,27 +6,45 @@ import '../fonts/pretendardvariable.css';
 
 function Navbar({ refs }){
     const scrollToRef = (ref) => {
-        window.scrollTo({
-            top: ref.current.offsetTop,
-            behavior: 'smooth'
-        });
+        if (ref && ref.current) {
+            window.scrollTo({
+                top: ref.current.offsetTop,
+                behavior: 'smooth'
+            });
+        }
     };
+
     const [isScrolled, setIsScrolled] = useState(false);
+
     useEffect(() => {
         const handleScroll = () => {
-            const landHeight = refs.homeRef.current.offsetHeight;
-            if (window.scrollY > landHeight) {
-                setIsScrolled(true);
-            } else {
-                setIsScrolled(false);
+            if (refs.homeRef && refs.homeRef.current) {
+                const landHeight = refs.homeRef.current.offsetHeight;
+                if (window.scrollY > landHeight) {
+                    setIsScrolled(true);
+                } else {
+                    setIsScrolled(false);
+                }
+            }
+        };
+
+        const handleResize = () => {
+            if (refs.homeRef && refs.homeRef.current) {
+                // Recalculate offsetTop on resize
+                const offsetTop = refs.homeRef.current.offsetTop;
+                //console.log('OffsetTop recalculated:', offsetTop);
+                scrollToRef(refs.homeRef);
             }
         };
 
         window.addEventListener('scroll', handleScroll);
+        window.addEventListener('resize', handleResize);
+
         return () => {
             window.removeEventListener('scroll', handleScroll);
+            window.removeEventListener('resize', handleResize);
         };
-    }, [refs.homeRef]);
+    }, [refs]);
 
     return(
         <div className="Nav">
