@@ -39,6 +39,19 @@ function Home(){
         setHomeRef(isPc ? pcHomeRef : mobHomeRef);
     }, [isPc]);
 
+    const AutoText = ({ text }) => {
+        return (
+            <>
+                {text.split("\n").map((line, idx) => (
+                    <React.Fragment key={idx}>
+                        {line}
+                        <br />
+                    </React.Fragment>
+                ))}
+            </>
+        );
+    };
+
     return(
         <div className="Home">
             <PC>
@@ -74,20 +87,10 @@ function Home(){
                             {AchieveData.map((ac) => (
                                 <SwiperSlide className="pc-tile">
                                     <div className="pc-tile-head">
-                                        {ac.name.split("\n").map((line, idx) => (
-                                            <React.Fragment key={idx}>
-                                                {line}
-                                                <br />
-                                            </React.Fragment>
-                                        ))}
+                                        <AutoText text={ac.name} />
                                     </div>
                                     <div className="pc-tile-sub">
-                                        {ac.prize.split("\n").map((line, idx) => (
-                                            <React.Fragment key={idx}>
-                                                {line}
-                                                <br />
-                                            </React.Fragment>
-                                        ))}
+                                        <AutoText text={ac.prize} />
                                     </div>
                                 </SwiperSlide>
                             ))}
@@ -129,7 +132,8 @@ function Home(){
                     <Footer refs={{ homeRef, alumniRef, aboutUsRef, faqRef, achieveRef }}/>
                 </div>
             </PC>
-            
+
+            {/* Mobile 시작입니다 */}
             <Mobile>
                 <div className="Home-Mob">
                     <Navbar refs={{ homeRef, alumniRef, aboutUsRef, faqRef, achieveRef }}/>
@@ -163,24 +167,14 @@ function Home(){
                                     <div className="FAQ-item" key={index}>
                                         <div className="Q" onClick={() => toggleFAQ(index)}>
                                             <div className="Q-text">
-                                                {faq.question.split("\n").map((line, idx) => (
-                                                    <React.Fragment key={idx}>
-                                                        {line}
-                                                        <br />
-                                                    </React.Fragment>
-                                                ))}
+                                                <AutoText text={faq.question} />
                                             </div>
                                             <img src="./top.svg" className={`Q-arrow ${openFAQ[index] ? '' : 'rotate'}`}/>
                                         </div>
                                         
                                         <div className={`A ${openFAQ[index] ? 'open' : 'close'}`}>
                                             <div className="A-text">
-                                                {faq.answer.split("\n").map((line, idx) => (
-                                                        <React.Fragment key={idx}>
-                                                            {line}
-                                                            <br />
-                                                        </React.Fragment>
-                                                ))}
+                                                <AutoText text={faq.answer} />
                                             </div>
                                         </div>
                                         
@@ -211,20 +205,10 @@ function Home(){
                             {AchieveData.map((ac) => (
                                 <SwiperSlide className="tile">
                                     <div className="tile-head">
-                                        {ac.name.split("\n").map((line, idx) => (
-                                            <React.Fragment key={idx}>
-                                                {line}
-                                                <br />
-                                            </React.Fragment>
-                                        ))}
+                                        <AutoText text={ac.name} />
                                     </div>
                                     <div className="tile-sub">
-                                        {ac.prize.split("\n").map((line, idx) => (
-                                            <React.Fragment key={idx}>
-                                                {line}
-                                                <br />
-                                            </React.Fragment>
-                                        ))}
+                                        <AutoText text={ac.prize} />
                                     </div>
                                 </SwiperSlide>
                             ))}
