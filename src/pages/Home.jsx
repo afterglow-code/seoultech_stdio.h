@@ -97,10 +97,10 @@ function Home(){
 
                             <div className="pc-button">
                                 <div className="custom-prev">
-                                    <img className="pc-b_size" src="./arrow-back-fill.svg" alt="Previous" />
+                                    <img className="pc-b_size" src={`${process.env.PUBLIC_URL}/arrow-back-fill.svg`} alt="Previous" />
                                 </div>
                                 <div className="custom-next">
-                                    <img className="pc-b_size" src="./arrow-right-fill.svg" alt="Next" />
+                                    <img className="pc-b_size" src={`${process.env.PUBLIC_URL}/arrow-right-fill.svg`} alt="Next" />
                                 </div>
                             </div>
                         </Swiper>
@@ -169,7 +169,7 @@ function Home(){
                                             <div className="Q-text">
                                                 <AutoText text={faq.question} />
                                             </div>
-                                            <img src="./top.svg" className={`Q-arrow ${openFAQ[index] ? '' : 'rotate'}`}/>
+                                            <img src={`${process.env.PUBLIC_URL}/top.svg`} className={`Q-arrow ${openFAQ[index] ? '' : 'rotate'}`}/>
                                         </div>
                                         
                                         <div className={`A ${openFAQ[index] ? 'open' : 'close'}`}>
@@ -215,10 +215,10 @@ function Home(){
 
                             <div className="button">
                                 <div className="custom-prev">
-                                    <img className="b_size" src="./arrow-back-fill.svg" alt="Previous" />
+                                    <img className="b_size" src={`${process.env.PUBLIC_URL}/arrow-back-fill.svg`} alt="Previous" />
                                 </div>
                                 <div className="custom-next">
-                                    <img className="b_size" src="./arrow-right-fill.svg" alt="Next" />
+                                    <img className="b_size" src={`${process.env.PUBLIC_URL}/arrow-right-fill.svg`} alt="Next" />
                                 </div>
                             </div>
                         </Swiper>

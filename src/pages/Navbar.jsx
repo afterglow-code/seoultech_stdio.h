@@ -38,7 +38,7 @@ function Navbar({ refs }){
         <div className="Nav">
             <PC>
                 <div className={`Nav-PC ${isScrolled ? 'scrolled' : ''}`}>
-                    <Link to = "/" onClick={() => scrollToRef(refs.homeRef)}><img src="./logo.png" className="logo"></img></Link>
+                    <Link to = "/" onClick={() => scrollToRef(refs.homeRef)}><img src={`${process.env.PUBLIC_URL}/logo.png`} className="logo"></img></Link>
                     <div className="Link-wrapper">
                         <Link to="/" className="Link-text" onClick={() => scrollToRef(refs.homeRef)}>Home</Link>
                         <Link to="/" className="Link-text" onClick={() => scrollToRef(refs.alumniRef)}>Alumni</Link>
@@ -52,10 +52,10 @@ function Navbar({ refs }){
 
             <Mobile>
                 <div className="Nav-Mobile">
-                    <Link to = "/" onClick={() => scrollToRef(refs.homeRef)}><img src="./logo.png" className="Mob-logo"></img></Link>
+                    <Link to = "/" onClick={() => scrollToRef(refs.homeRef)}><img src={`${process.env.PUBLIC_URL}/logo.png`} className="Mob-logo"></img></Link>
                     <Link to="/" className="Mob-link-wrap">
                         <div className="Mob-text">지원하기</div>
-                        <img src="./Vector.svg" className="Mob-logo"></img>
+                        <img src={`${process.env.PUBLIC_URL}/Vector.svg`} className="Mob-logo"></img>
                     </Link>
                 </div>
             </Mobile>
