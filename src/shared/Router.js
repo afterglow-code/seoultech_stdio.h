@@ -5,7 +5,7 @@ import Home from "../pages/Home.jsx";
 
 const Router =() => {
     return(
-        <BrowserRouter basename="seoultech_stdio.h/">
+        <BrowserRouter basename="/">
             <Routes>
                 <Route exact path="/" element ={<Home/>}/>
             </Routes>
