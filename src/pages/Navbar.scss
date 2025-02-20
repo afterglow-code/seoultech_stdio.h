@@ -1,0 +1,68 @@
+.Nav{
+    position: fixed;
+    width: 100%;
+    height: fit-content;
+    z-index: 1;
+}
+
+.Nav-PC{
+    display: grid;
+    height: 51px;
+    grid-template-columns: 50px 530px;
+    grid-template-rows: 1fr;
+    padding-right: 60px;
+    padding-left: 60px;
+    justify-content:space-between;
+    align-items: center;
+    border-bottom: 1px solid #486284;
+}
+.Nav-PC.scrolled {
+    background-color: #fff;
+}
+
+.logo{
+    justify-content: center;
+}
+
+.Link-wrapper{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 25px;
+    padding-right: 20px;
+    padding-left: 20px;
+    text-align: center;
+
+}
+
+.Link-text
+{
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+}
+
+.Nav-Mobile{
+    display: grid;
+    grid-template-columns: 50px 40px;
+    grid-template-rows: 15px;
+    padding-right: 17px;
+    padding-left: 17px;
+    padding-top: 40px;
+    padding-bottom: 17px;
+    justify-content:space-between;
+    background-color: #ffff;
+    width: calc(100% - 34px);
+}
+
+.Mob-link-wrap{
+    text-decoration: none;
+    
+    font-size: 10px;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 34px 6px;
+    font-family: 'Pretendard Variable';
+    color: #486284;
+    letter-spacing: -0.03em;
+}
+
