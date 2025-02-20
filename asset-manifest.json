@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/static/css/main.2b52ee14.css",
+    "main.js": "/static/js/main.efcc7971.js",
+    "static/js/488.11f14f95.chunk.js": "/static/js/488.11f14f95.chunk.js",
+    "static/media/PretendardVariable.woff2": "/static/media/PretendardVariable.2bc582461caf4e05b51d.woff2",
+    "static/media/locus_sangsang.otf": "/static/media/locus_sangsang.235205ffd2bfc0bcdf7f.otf",
+    "index.html": "/index.html",
+    "main.2b52ee14.css.map": "/static/css/main.2b52ee14.css.map",
+    "main.efcc7971.js.map": "/static/js/main.efcc7971.js.map",
+    "488.11f14f95.chunk.js.map": "/static/js/488.11f14f95.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2b52ee14.css",
+    "static/js/main.efcc7971.js"
+  ]
+}
