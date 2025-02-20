@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/seoultech_stdio.h/static/css/main.152dd7b6.css",
+    "main.js": "/seoultech_stdio.h/static/js/main.482a5440.js",
+    "static/js/488.c6eae377.chunk.js": "/seoultech_stdio.h/static/js/488.c6eae377.chunk.js",
+    "static/media/PretendardVariable.woff2": "/seoultech_stdio.h/static/media/PretendardVariable.2bc582461caf4e05b51d.woff2",
+    "static/media/locus_sangsang.otf": "/seoultech_stdio.h/static/media/locus_sangsang.235205ffd2bfc0bcdf7f.otf",
+    "index.html": "/seoultech_stdio.h/index.html",
+    "main.152dd7b6.css.map": "/seoultech_stdio.h/static/css/main.152dd7b6.css.map",
+    "main.482a5440.js.map": "/seoultech_stdio.h/static/js/main.482a5440.js.map",
+    "488.c6eae377.chunk.js.map": "/seoultech_stdio.h/static/js/488.c6eae377.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.152dd7b6.css",
+    "static/js/main.482a5440.js"
+  ]
+}
