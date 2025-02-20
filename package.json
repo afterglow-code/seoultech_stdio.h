@@ -1,6 +1,6 @@
 {
   "homepage": "https://afterglow-code.github.io/seoultech_stdio.h/",
-  "name": "Seoultech_stdio.h",
+  "name": "stdio.h",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
