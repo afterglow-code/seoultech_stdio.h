@@ -68,7 +68,9 @@ function Home(){
                     
                     {/* Activities Introduction_Page2:D */}
                     <div className="Activities">
-                        <div className="activities-background"></div>
+                        <div className="activities-background">
+                            <div className="right-circle"></div> {/* 오른쪽 원 추가 */}
+                        </div>
 
                         {/* stdio.h 로고 및 설명 추가 */}
                         <div className="activities-header">
@@ -82,7 +84,7 @@ function Home(){
                         {/* 활동 리스트 */}
                         <div className="activity-list">
                             <div className="activity">
-                                <img src="./map.svg" alt="활동 아이콘" className="activity-icon" />
+                                <img src={`${process.env.PUBLIC_URL}/map.svg`} alt="활동 아이콘" className="activity-icon" />
                                 <h3>다양한 활동</h3>
                                 <p>
                                     장학금 길라잡이, 진로설계 길라잡이, MT 등 <br />
@@ -91,7 +93,7 @@ function Home(){
                             </div>
 
                             <div className="activity">
-                                <img src="./cal.svg" alt="스터디 아이콘" className="activity-icon" />
+                                <img src={`${process.env.PUBLIC_URL}/cal.svg`} alt="스터디 아이콘" className="activity-icon" />
                                 <h3>전공 스터디</h3>
                                 <p>
                                     하나보단 둘, 둘보단 셋! <br />
@@ -101,7 +103,7 @@ function Home(){
                             </div>
 
                             <div className="activity">
-                                <img src="./car.svg" alt="프로젝트 아이콘" className="activity-icon" />
+                                <img src={`${process.env.PUBLIC_URL}/car.svg`} alt="프로젝트 아이콘" className="activity-icon" />
                                 <h3>다양한 프로젝트</h3>
                                 <p>
                                     경진대회, 공모전, 동아리 내부 프로젝트 등 <br />
