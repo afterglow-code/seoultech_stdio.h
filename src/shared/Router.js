@@ -4,8 +4,10 @@ import Home from "../pages/Home.jsx";
 
 
 const Router =() => {
+
+    const basename = process.env.NODE_ENV === 'production' ? '/seoultech_stdio.h' : '';
     return(
-        <BrowserRouter basename="/">
+        <BrowserRouter basename={basename}>
             <Routes>
                 <Route exact path="/" element ={<Home/>}/>
             </Routes>
