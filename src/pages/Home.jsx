@@ -1,6 +1,5 @@
-import React, {useState, useRef, useEffect} from "react";
+import React, {useState, useRef} from "react";
 import {Link} from 'react-router-dom';
-import { useMediaQuery } from "react-responsive";
 import './Home.scss';
 
 import {Mobile, PC} from './Mediaquery.jsx';
@@ -25,42 +24,93 @@ function Home(){
             return newFAQ;
         });
     };
-    const isPc = useMediaQuery({ minWidth: 768 });
-    const pcHomeRef = useRef(null);
-    const mobHomeRef = useRef(null);
+
+    const homeRef = useRef(null);
     const alumniRef = useRef(null);
     const aboutUsRef = useRef(null);
     const faqRef = useRef(null);
     const achieveRef = useRef(null);
-
-    const [homeRef, setHomeRef] = useState(pcHomeRef);
-    useEffect(() => {
-        // 화면 크기 변경될 때마다 ref 변경
-        setHomeRef(isPc ? pcHomeRef : mobHomeRef);
-    }, [isPc]);
-
-    const AutoText = ({ text }) => {
-        return (
-            <>
-                {text.split("\n").map((line, idx) => (
-                    <React.Fragment key={idx}>
-                        {line}
-                        <br />
-                    </React.Fragment>
-                ))}
-            </>
-        );
-    };
 
     return(
         <div className="Home">
             <PC>
                 <div className="Home-PC">
                     <Navbar refs={{ homeRef, alumniRef, aboutUsRef, faqRef, achieveRef }}/>
+
+                    {/* Background Decoration */}
+                    <div className="background-circles"></div>
+
                     {/* Land */}
-                    <div ref={pcHomeRef} className="Land">
-                        <div>1번, 2번</div>
+                    <div ref={homeRef} className="Land">
+                        <div className="MainIntro">
+                            <p className="sub-title">서울과학기술대학교</p>
+                            <div className="title-container">
+                                <h1>스마트 ICT융합공학과</h1>
+                                <h1>학술동아리</h1>
+                                <h1>stdio.h</h1>
+                            </div>
+                            <p className="description">stdio.h는 스마트ICT융합공학과 유일 학술동아리입니다. <br/>장학금 안내, 전공 스터디, 아두이노 실습 등 다양한 프로그램을 통해 <br/>동아리원과 함께 성장하는 동아리입니다.</p>
+                            
+                            {/* White Box */}
+                            <div className="info-box">
+                                <div className="info-item">
+                                    <span className="info-label">◉ 지원방법</span>
+                                    <span className="info-value">구글폼</span>
+                                </div>
+                                <div className="info-item">
+                                    <span className="info-label">◉ 지원 가능 일시</span>
+                                    <span className="info-value">25.02.10 12:00 ~ 25.02.20 15:00</span>
+                                </div>
+                                <button className="apply-button">지원하기↗</button>
+                            </div>
+                        </div>
                     </div>
+                    
+                    {/* Activities Introduction_Page2:D */}
+                    <div className="Activities">
+                        <div className="activities-background"></div>
+
+                        {/* stdio.h 로고 및 설명 추가 */}
+                        <div className="activities-header">
+                            <h2 className="activities-title">stdio.h</h2>
+                            <p className="activities-description">
+                                자율적인 참여로 운영되고 <br />
+                                구성원 모두 함께 성장하는 것을 목표로 합니다.
+                            </p>
+                        </div>
+
+                        {/* 활동 리스트 */}
+                        <div className="activity-list">
+                            <div className="activity">
+                                <img src="./map.svg" alt="활동 아이콘" className="activity-icon" />
+                                <h3>다양한 활동</h3>
+                                <p>
+                                    장학금 길라잡이, 진로설계 길라잡이, MT 등 <br />
+                                    다양한 친목행사와 정보 나눔을 진행합니다.
+                                </p>
+                            </div>
+
+                            <div className="activity">
+                                <img src="./cal.svg" alt="스터디 아이콘" className="activity-icon" />
+                                <h3>전공 스터디</h3>
+                                <p>
+                                    하나보단 둘, 둘보단 셋! <br />
+                                    어려운 전공을 함께 공부하는 <br />
+                                    전공 스터디를 진행합니다.
+                                </p>
+                            </div>
+
+                            <div className="activity">
+                                <img src="./car.svg" alt="프로젝트 아이콘" className="activity-icon" />
+                                <h3>다양한 프로젝트</h3>
+                                <p>
+                                    경진대회, 공모전, 동아리 내부 프로젝트 등 <br />
+                                    다양한 활동을 통해 경험을 만들어갑니다.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
                     {/* About us 시작입니다 */}
 
                     {/* q&a 시작입니다 */}
@@ -87,10 +137,20 @@ function Home(){
                             {AchieveData.map((ac) => (
                                 <SwiperSlide className="pc-tile">
                                     <div className="pc-tile-head">
-                                        <AutoText text={ac.name} />
+                                        {ac.name.split("\n").map((line, idx) => (
+                                            <React.Fragment key={idx}>
+                                                {line}
+                                                <br />
+                                            </React.Fragment>
+                                        ))}
                                     </div>
                                     <div className="pc-tile-sub">
-                                        <AutoText text={ac.prize} />
+                                        {ac.prize.split("\n").map((line, idx) => (
+                                            <React.Fragment key={idx}>
+                                                {line}
+                                                <br />
+                                            </React.Fragment>
+                                        ))}
                                     </div>
                                 </SwiperSlide>
                             ))}
@@ -129,16 +189,15 @@ function Home(){
                             </div>
                         </div>
 
-                    <Footer refs={{ homeRef, alumniRef, aboutUsRef, faqRef, achieveRef }}/>
+                    <Footer/>
                 </div>
             </PC>
-
-            {/* Mobile 시작입니다 */}
+            
             <Mobile>
                 <div className="Home-Mob">
-                    <Navbar refs={{ homeRef, alumniRef, aboutUsRef, faqRef, achieveRef }}/>
+                    <Navbar/>
                     {/* 홈 */}
-                    <div className="Mob-Main" ref={mobHomeRef}>
+                    <div className="Mob-Main">
                         <div className="Mob-Main-inline">
                             <div className="Mob-text-wrapper">
                                     <div className="Mob-head-sub">서울과학기술대학교</div>
@@ -167,14 +226,24 @@ function Home(){
                                     <div className="FAQ-item" key={index}>
                                         <div className="Q" onClick={() => toggleFAQ(index)}>
                                             <div className="Q-text">
-                                                <AutoText text={faq.question} />
+                                                {faq.question.split("\n").map((line, idx) => (
+                                                    <React.Fragment key={idx}>
+                                                        {line}
+                                                        <br />
+                                                    </React.Fragment>
+                                                ))}
                                             </div>
                                             <img src="./top.svg" className={`Q-arrow ${openFAQ[index] ? '' : 'rotate'}`}/>
                                         </div>
                                         
                                         <div className={`A ${openFAQ[index] ? 'open' : 'close'}`}>
                                             <div className="A-text">
-                                                <AutoText text={faq.answer} />
+                                                {faq.answer.split("\n").map((line, idx) => (
+                                                        <React.Fragment key={idx}>
+                                                            {line}
+                                                            <br />
+                                                        </React.Fragment>
+                                                ))}
                                             </div>
                                         </div>
                                         
@@ -205,10 +274,20 @@ function Home(){
                             {AchieveData.map((ac) => (
                                 <SwiperSlide className="tile">
                                     <div className="tile-head">
-                                        <AutoText text={ac.name} />
+                                        {ac.name.split("\n").map((line, idx) => (
+                                            <React.Fragment key={idx}>
+                                                {line}
+                                                <br />
+                                            </React.Fragment>
+                                        ))}
                                     </div>
                                     <div className="tile-sub">
-                                        <AutoText text={ac.prize} />
+                                        {ac.prize.split("\n").map((line, idx) => (
+                                            <React.Fragment key={idx}>
+                                                {line}
+                                                <br />
+                                            </React.Fragment>
+                                        ))}
                                     </div>
                                 </SwiperSlide>
                             ))}
@@ -244,7 +323,7 @@ function Home(){
                         </div>
                     </div>
 
-                    <Footer refs={{ homeRef, alumniRef, aboutUsRef, faqRef, achieveRef }}/>
+                    <Footer/>
 
                 </div>                
             </Mobile>
