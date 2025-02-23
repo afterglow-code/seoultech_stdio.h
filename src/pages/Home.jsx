@@ -1,6 +1,5 @@
 import React, {useState, useRef, useEffect} from "react";
 import {Link} from 'react-router-dom';
-import { useMediaQuery } from "react-responsive";
 import './Home.scss';
 
 import {Mobile, PC} from './Mediaquery.jsx';
@@ -8,6 +7,7 @@ import Navbar from "./Navbar.jsx";
 import Footer from "./Footer.jsx";
 import { FAQData, AlumniData, AchieveData } from "./data.js";
 
+import { useMediaQuery } from "react-responsive";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
@@ -25,6 +25,7 @@ function Home(){
             return newFAQ;
         });
     };
+
     const isPc = useMediaQuery({ minWidth: 768 });
     const pcHomeRef = useRef(null);
     const mobHomeRef = useRef(null);
@@ -51,16 +52,88 @@ function Home(){
             </>
         );
     };
-
     return(
         <div className="Home">
             <PC>
                 <div className="Home-PC">
                     <Navbar refs={{ homeRef, alumniRef, aboutUsRef, faqRef, achieveRef }}/>
+
+                    {/* Background Decoration */}
+                    <div className="background-circles"></div>
+
                     {/* Land */}
                     <div ref={pcHomeRef} className="Land">
-                        <div>1번, 2번</div>
+                        <div className="MainIntro">
+                            <p className="sub-title">서울과학기술대학교</p>
+                            <div className="title-container">
+                                <h1>스마트 ICT융합공학과</h1>
+                                <h1>학술동아리</h1>
+                                <h1>stdio.h</h1>
+                            </div>
+                            <p className="description">stdio.h는 스마트ICT융합공학과 유일 학술동아리입니다. <br/>장학금 안내, 전공 스터디, 아두이노 실습 등 다양한 프로그램을 통해 <br/>동아리원과 함께 성장하는 동아리입니다.</p>
+                            
+                            {/* White Box */}
+                            <div className="info-box">
+                                <div className="info-item">
+                                    <span className="info-label">◉ 지원방법</span>
+                                    <span className="info-value">구글폼</span>
+                                </div>
+                                <div className="info-item">
+                                    <span className="info-label">◉ 지원 가능 일시</span>
+                                    <span className="info-value">25.02.10 12:00 ~ 25.02.20 15:00</span>
+                                </div>
+                                <button className="apply-button" onClick={() => window.open("https://forms.gle/sSPaucmjSrbQyga27")}>지원하기↗</button>
+                            </div>
+                        </div>
                     </div>
+                    
+                    {/* Activities Introduction_Page2:D */}
+                    <div className="Activities">
+                        <div className="activities-background">
+                            <div className="right-circle"></div> {/* 오른쪽 원 추가 */}
+                        </div>
+
+                        {/* stdio.h 로고 및 설명 추가 */}
+                        <div className="activities-header">
+                            <h2 className="activities-title">stdio.h</h2>
+                            <p className="activities-description">
+                                자율적인 참여로 운영되고 <br />
+                                구성원 모두 함께 성장하는 것을 목표로 합니다.
+                            </p>
+                        </div>
+
+                        {/* 활동 리스트 */}
+                        <div className="activity-list">
+                            <div className="activity">
+                                <img src={`${process.env.PUBLIC_URL}/map.svg`} alt="활동 아이콘" className="activity-icon" />
+                                <h3>다양한 활동</h3>
+                                <p>
+                                    장학금 길라잡이, 진로설계 길라잡이, MT 등 <br />
+                                    다양한 친목행사와 정보 나눔을 진행합니다.
+                                </p>
+                            </div>
+
+                            <div className="activity">
+                                <img src={`${process.env.PUBLIC_URL}/cal.svg`} alt="스터디 아이콘" className="activity-icon" />
+                                <h3>전공 스터디</h3>
+                                <p>
+                                    하나보단 둘, 둘보단 셋! <br />
+                                    어려운 전공을 함께 공부하는 <br />
+                                    전공 스터디를 진행합니다.
+                                </p>
+                            </div>
+
+                            <div className="activity">
+                                <img src={`${process.env.PUBLIC_URL}/car.svg`} alt="프로젝트 아이콘" className="activity-icon" />
+                                <h3>다양한 프로젝트</h3>
+                                <p>
+                                    경진대회, 공모전, 동아리 내부 프로젝트 등 <br />
+                                    다양한 활동을 통해 경험을 만들어갑니다.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
                     {/* About us 시작입니다 */}
 
                     {/* q&a 시작입니다 */}
@@ -133,7 +206,7 @@ function Home(){
                 </div>
             </PC>
 
-            {/* Mobile 시작입니다 */}
+             {/* Mobile 시작입니다 */}
             <Mobile>
                 <div className="Home-Mob">
                     <Navbar refs={{ homeRef, alumniRef, aboutUsRef, faqRef, achieveRef }}/>
@@ -154,6 +227,89 @@ function Home(){
                             </div>
                         </div>
                     </div>
+
+                    {/* Home-2 */}
+                    <div className="Mobsub">
+                        <div class="logo">
+                            <img src={`${process.env.PUBLIC_URL}/logo.png`}/>
+                        </div>
+
+                        <div class="intro">
+                            <span>자율적인 참여</span>로 운영되고
+                            <br />구성원 <span>모두 함께 성장</span>하는 것을 목표로 합니다.
+                        </div>
+
+                        <div class="first">
+                            <img src={`${process.env.PUBLIC_URL}/map.svg`}/>
+                            <br/><span>다양한 활동</span>
+                            <br/>장학금 갈라잡이, 진로설계 갈라잡이, Mt 등
+                            <br/>다양한 친목행사와 정보 나눔을 진행합니다.
+                        </div>
+
+                        <div class="second">
+                            <img src={`${process.env.PUBLIC_URL}/cal.svg`}/>
+                            <br/><span>전공 스터디</span>
+                            <br/>하나보다는 둘, 둘보다는 셋!
+                            <br/>어려운 전공을 함께 공부하는
+                            <br/>전공 스터디를 진행합니다.
+                        </div>
+
+                        <div class="third">
+                            <img src={`${process.env.PUBLIC_URL}/car.svg`}/>
+                            <br/><span>다양한 프로젝트</span>
+                            <br/>경진대회, 공모전, 동아리 내부 프로젝트 등
+                            <br/>다양한 활동을 통해 경험을 만들어갑니다.
+                        </div>
+                    </div>
+
+                    {/* About us */}           
+                    <div class="about-us">
+                        <div class="us-textwapper">
+                            <div class="us-main">
+                                stdio.h 프로그램
+                            </div>
+                        
+                            <div class="us-box1">
+                                <span>장학금, 진로설계 길라잡이</span>
+                                <div class="box-text">
+                                    <br/>장학금 길라잡이는
+                                    <br/>복잡한 장학선발 절차를 안내하고
+                                    <br/>장학선발 지원을 위한 자기소개서, 장학금 수혜 후기 등을 공유합니다.
+                                    <br/><br/>진로설계 길라잡이는
+                                    <br/>다양한 진로들의 소개와 준비 방법들을 공유합니다.
+                                </div>
+                            </div> 
+
+                            <div class="us-box2">
+                                <span>전공, 기술 스터디</span>
+                                <div class="box-text">
+                                    <br/>전공 스터디에서는
+                                    <br/>공학수학, 신호 및 시스템, 전력전자, 딥러닝 등
+                                    <br/>전공 관련 소규모 스터디를 통해 전공 이해도를 놉힙니다.
+                                    <br/><br/>기술 스터디에서는
+                                    <br/>HW/FW, SW, ML/DL 등 각 직무별로 요구되는 기술의 스터디를 진행합니다.
+                                </div>
+                            </div> 
+
+                            <div class="us-box3">
+                                <span>아두이노, 라즈베리파이 실습</span>
+                                <div class="box-text">
+                                    <br/>아두이노, 라즈베리파이 등을 이용해
+                                    <br/>IOT제어, 모터 제어 등 다양한 실습을 진행합니다.
+                                </div>
+                            </div> 
+
+                            <div class="us-box4">
+                                <span>공모전, 경진대회</span>
+                                <div class="box-text">
+                                    <br/>공모전, 경진대회를 통해 다양한 실전 경험을 얻고자 합니다.
+                                    <br/>stdio.h는 임베디드SW경진대회, 한이음 등
+                                    <br/>다양한 공모전, 경진대회에 참여중입니다.
+                                </div>
+                            </div>
+                        </div>
+                    </div>  
+
                     {/* FAQ 시작입니다 */}
                     <div className="Mob-FAQ">
                         <div className="Mob-FAQ-inline">
@@ -183,7 +339,7 @@ function Home(){
                             </div>
                         </div>
                     </div>
-        
+                            
                     {/* Achieve 시작입니다 */}
                     <div className="Achieve">
                         <div className="Achieve-Head">stdio.h의 기록</div>
@@ -223,6 +379,7 @@ function Home(){
                             </div>
                         </Swiper>
                     </div>
+
                     {/* 졸업생 시작입니다 */}
                     <div className="Alumni">
                         <div className="Alumni-head">Alumni</div>
