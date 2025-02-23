@@ -452,7 +452,7 @@
 .Mob-head-wrapper{
     font-size: 24px;
     letter-spacing: 0.5px;
-    font-family: locus_sangsang;
+    font-family: 'locus_sangsang';
     color: #1a202c;
     text-align: left;
     display: grid;
@@ -468,6 +468,104 @@
     color: #486284;
     text-align: left;
 }
+//Home-2 ~ About us
+
+.Mobsub {
+    margin-top: 30px;
+    height: 680px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+}
+
+.logo{
+    margin-bottom: 25px;
+}
+
+.first, .second, .third{
+    margin-top: 45px;
+}
+
+.intro, .first, .second, .third{
+    font-family: 'Pretendard variable';
+    line-height: 150%;
+    font-weight: 300;
+    font-size: 12px;
+    color: #1a202c;
+}
+
+.intro{
+    font-weight: 400;
+}
+
+.intro span{
+    font-weight: 500;
+}
+
+.first span, .second span, .third span{
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 200%;
+    letter-spacing: -2%;
+}
+
+.about-us {
+    margin-top: 30px;
+    height: 850px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding-bottom: 144px;
+}
+
+.us-textwapper {
+    font-family: 'Pretendard variable';
+    line-height: 140%;
+    font-weight: 300;
+    font-size: 11px;
+    color: #1a202c;
+}
+
+.us-main {
+    margin-top: 10px;
+    line-height: 40px;
+    letter-spacing: 0.5px;
+    font-size: 16px;
+    font-weight: 700;
+    color: rgba(72, 98, 132, 1);
+}
+
+.us-box1, .us-box2, .us-box3, .us-box4{
+    height: hug;
+    width: fill;
+    background-color: rgba(250, 251, 253, 1);
+    border-radius: 20px;
+    margin-top: 10px;
+    margin-left: 0;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.us-box1 span, .us-box2 span, .us-box3 span, .us-box4 span{
+    padding-top:  30px;
+    letter-spacing: 0.5px;
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(26, 32, 44, 1);
+}
+
+.box-text {
+    margin-top: 15px;
+    font-family: 'Pretendard variable';
+    line-height: 150%;
+    font-weight: 300;
+    font-size: 11px;
+    color: rgba(72, 98, 132, 1);
+}
+
 
 //FAQ 페이지 시작
 .Mob-FAQ{
