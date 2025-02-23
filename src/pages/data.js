@@ -8,9 +8,8 @@ export const FAQData = [
 ];
 
 export const AlumniData = [
-    {name: "김철수", contact: "123@gmail.com", major:"스마트ICT융합공학과", year: "2025.02"},
-    {name: "김철수", contact: "123@gmail.com", major:"스마트ICT융합공학과", year: "2025.02"},
-    {name: "김철수", contact: "123@gmail.com", major:"스마트ICT융합공학과", year: "2025.02"},
+    {name: "황준성", contact: "hjs3290@seoultech.ac.kr", major:"스마트ICT융합공학과", year: "2025.02"},
+    
 ];
 
 export const AchieveData = [

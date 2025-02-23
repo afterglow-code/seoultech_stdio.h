@@ -1,4 +1,4 @@
-import React, {useState, useRef} from "react";
+import React, {useState, useRef, useEffect} from "react";
 import {Link} from 'react-router-dom';
 import './Home.scss';
 
@@ -7,6 +7,7 @@ import Navbar from "./Navbar.jsx";
 import Footer from "./Footer.jsx";
 import { FAQData, AlumniData, AchieveData } from "./data.js";
 
+import { useMediaQuery } from "react-responsive";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
@@ -25,7 +26,9 @@ function Home(){
         });
     };
 
-    
+    const isPc = useMediaQuery({ minWidth: 768 });
+    const pcHomeRef = useRef(null);
+    const mobHomeRef = useRef(null);
     const alumniRef = useRef(null);
     const aboutUsRef = useRef(null);
     const faqRef = useRef(null);
@@ -59,7 +62,7 @@ function Home(){
                     <div className="background-circles"></div>
 
                     {/* Land */}
-                    <div ref={homeRef} className="Land">
+                    <div ref={pcHomeRef} className="Land">
                         <div className="MainIntro">
                             <p className="sub-title">서울과학기술대학교</p>
                             <div className="title-container">
@@ -79,7 +82,7 @@ function Home(){
                                     <span className="info-label">◉ 지원 가능 일시</span>
                                     <span className="info-value">25.02.10 12:00 ~ 25.02.20 15:00</span>
                                 </div>
-                                <button className="apply-button">지원하기↗</button>
+                                <button className="apply-button" onClick={() => window.open("https://forms.gle/sSPaucmjSrbQyga27")}>지원하기↗</button>
                             </div>
                         </div>
                     </div>
@@ -157,20 +160,10 @@ function Home(){
                             {AchieveData.map((ac) => (
                                 <SwiperSlide className="pc-tile">
                                     <div className="pc-tile-head">
-                                        {ac.name.split("\n").map((line, idx) => (
-                                            <React.Fragment key={idx}>
-                                                {line}
-                                                <br />
-                                            </React.Fragment>
-                                        ))}
+                                        <AutoText text={ac.name} />
                                     </div>
                                     <div className="pc-tile-sub">
-                                        {ac.prize.split("\n").map((line, idx) => (
-                                            <React.Fragment key={idx}>
-                                                {line}
-                                                <br />
-                                            </React.Fragment>
-                                        ))}
+                                        <AutoText text={ac.prize} />
                                     </div>
                                 </SwiperSlide>
                             ))}
@@ -209,15 +202,16 @@ function Home(){
                             </div>
                         </div>
 
-                    <Footer/>
+                    <Footer refs={{ homeRef, alumniRef, aboutUsRef, faqRef, achieveRef }}/>
                 </div>
             </PC>
-            
+
+             {/* Mobile 시작입니다 */}
             <Mobile>
                 <div className="Home-Mob">
-                    <Navbar/>
+                    <Navbar refs={{ homeRef, alumniRef, aboutUsRef, faqRef, achieveRef }}/>
                     {/* 홈 */}
-                    <div className="Mob-Main">
+                    <div className="Mob-Main" ref={mobHomeRef}>
                         <div className="Mob-Main-inline">
                             <div className="Mob-text-wrapper">
                                     <div className="Mob-head-sub">서울과학기술대학교</div>
@@ -329,24 +323,14 @@ function Home(){
                                     <div className="FAQ-item" key={index}>
                                         <div className="Q" onClick={() => toggleFAQ(index)}>
                                             <div className="Q-text">
-                                                {faq.question.split("\n").map((line, idx) => (
-                                                    <React.Fragment key={idx}>
-                                                        {line}
-                                                        <br />
-                                                    </React.Fragment>
-                                                ))}
+                                                <AutoText text={faq.question} />
                                             </div>
                                             <img src={`${process.env.PUBLIC_URL}/top.svg`} className={`Q-arrow ${openFAQ[index] ? '' : 'rotate'}`}/>
                                         </div>
                                         
                                         <div className={`A ${openFAQ[index] ? 'open' : 'close'}`}>
                                             <div className="A-text">
-                                                {faq.answer.split("\n").map((line, idx) => (
-                                                        <React.Fragment key={idx}>
-                                                            {line}
-                                                            <br />
-                                                        </React.Fragment>
-                                                ))}
+                                                <AutoText text={faq.answer} />
                                             </div>
                                         </div>
                                         
@@ -377,20 +361,10 @@ function Home(){
                             {AchieveData.map((ac) => (
                                 <SwiperSlide className="tile">
                                     <div className="tile-head">
-                                        {ac.name.split("\n").map((line, idx) => (
-                                            <React.Fragment key={idx}>
-                                                {line}
-                                                <br />
-                                            </React.Fragment>
-                                        ))}
+                                        <AutoText text={ac.name} />
                                     </div>
                                     <div className="tile-sub">
-                                        {ac.prize.split("\n").map((line, idx) => (
-                                            <React.Fragment key={idx}>
-                                                {line}
-                                                <br />
-                                            </React.Fragment>
-                                        ))}
+                                        <AutoText text={ac.prize} />
                                     </div>
                                 </SwiperSlide>
                             ))}
@@ -427,7 +401,7 @@ function Home(){
                         </div>
                     </div>
 
-                    <Footer/>
+                    <Footer refs={{ homeRef, alumniRef, aboutUsRef, faqRef, achieveRef }}/>
 
                 </div>                
             </Mobile>
