@@ -42,7 +42,7 @@ function Footer({refs}){
 
             <Mobile>
                 <div className="Mob-footer">
-                    <img src={`${process.env.PUBLIC_URL}/logo.png`} className="Mob-footer-logo" onClick={() => scrollToRef(refs.homeRef)}></img>
+                    <img src={`${process.env.PUBLIC_URL}/logo.svg`} className="Mob-footer-logo" onClick={() => scrollToRef(refs.homeRef)}></img>
                     <div className="Mob-box">
                         <div className="Mob-contact">회장 장세영<br/>010-7352-2030</div>
                         <div className="Mob-noti">© 2025 stdio.h. All Right Reserved.</div>

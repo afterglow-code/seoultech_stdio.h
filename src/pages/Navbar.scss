@@ -15,10 +15,20 @@
     justify-content:space-between;
     align-items: center;
     border-bottom: 1px solid #486284;
-    align-items: center;
 }
 .Nav-PC.scrolled {
     background-color: #fff;
+}
+.logo-wrap{
+    justify-content: center;
+    align-content: center;
+    display: flex;
+    width: 50px;
+    height: 50px;
+}
+.logo{
+    width: 50px;
+    height: 50px;
 }
 
 .Link-wrapper{
@@ -63,3 +73,7 @@
     letter-spacing: -0.03em;
 }
 
+.Mob-logo{
+    width: 50px;
+    height: 15px;
+}
