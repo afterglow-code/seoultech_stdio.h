@@ -154,6 +154,89 @@ function Home(){
                             </div>
                         </div>
                     </div>
+
+                    {/* Home-2 */}
+                    <div className="Mobsub">
+                        <div class="logo">
+                            <img src={`${process.env.PUBLIC_URL}/logo.png`}/>
+                        </div>
+
+                        <div class="intro">
+                            <span>자율적인 참여</span>로 운영되고
+                            <br />구성원 <span>모두 함께 성장</span>하는 것을 목표로 합니다.
+                        </div>
+
+                        <div class="first">
+                            <img src={`${process.env.PUBLIC_URL}/map.svg`}/>
+                            <br/><span>다양한 활동</span>
+                            <br/>장학금 갈라잡이, 진로설계 갈라잡이, Mt 등
+                            <br/>다양한 친목행사와 정보 나눔을 진행합니다.
+                        </div>
+
+                        <div class="second">
+                            <img src={`${process.env.PUBLIC_URL}/cal.svg`}/>
+                            <br/><span>전공 스터디</span>
+                            <br/>하나보다는 둘, 둘보다는 셋!
+                            <br/>어려운 전공을 함께 공부하는
+                            <br/>전공 스터디를 진행합니다.
+                        </div>
+
+                        <div class="third">
+                            <img src={`${process.env.PUBLIC_URL}/car.svg`}/>
+                            <br/><span>다양한 프로젝트</span>
+                            <br/>경진대회, 공모전, 동아리 내부 프로젝트 등
+                            <br/>다양한 활동을 통해 경험을 만들어갑니다.
+                        </div>
+                    </div>
+
+                    {/* About us */}           
+                    <div class="about-us">
+                        <div class="us-textwapper">
+                            <div class="us-main">
+                                stdio.h 프로그램
+                            </div>
+                        
+                            <div class="us-box1">
+                                <span>장학금, 진로설계 길라잡이</span>
+                                <div class="box-text">
+                                    <br/>장학금 길라잡이는
+                                    <br/>복잡한 장학선발 절차를 안내하고
+                                    <br/>장학선발 지원을 위한 자기소개서, 장학금 수혜 후기 등을 공유합니다.
+                                    <br/><br/>진로설계 길라잡이는
+                                    <br/>다양한 진로들의 소개와 준비 방법들을 공유합니다.
+                                </div>
+                            </div> 
+
+                            <div class="us-box2">
+                                <span>전공, 기술 스터디</span>
+                                <div class="box-text">
+                                    <br/>전공 스터디에서는
+                                    <br/>공학수학, 신호 및 시스템, 전력전자, 딥러닝 등
+                                    <br/>전공 관련 소규모 스터디를 통해 전공 이해도를 놉힙니다.
+                                    <br/><br/>기술 스터디에서는
+                                    <br/>HW/FW, SW, ML/DL 등 각 직무별로 요구되는 기술의 스터디를 진행합니다.
+                                </div>
+                            </div> 
+
+                            <div class="us-box3">
+                                <span>아두이노, 라즈베리파이 실습</span>
+                                <div class="box-text">
+                                    <br/>아두이노, 라즈베리파이 등을 이용해
+                                    <br/>IOT제어, 모터 제어 등 다양한 실습을 진행합니다.
+                                </div>
+                            </div> 
+
+                            <div class="us-box4">
+                                <span>공모전, 경진대회</span>
+                                <div class="box-text">
+                                    <br/>공모전, 경진대회를 통해 다양한 실전 경험을 얻고자 합니다.
+                                    <br/>stdio.h는 임베디드SW경진대회, 한이음 등
+                                    <br/>다양한 공모전, 경진대회에 참여중입니다.
+                                </div>
+                            </div>
+                        </div>
+                    </div>  
+
                     {/* FAQ 시작입니다 */}
                     <div className="Mob-FAQ">
                         <div className="Mob-FAQ-inline">
@@ -183,7 +266,7 @@ function Home(){
                             </div>
                         </div>
                     </div>
-        
+                            
                     {/* Achieve 시작입니다 */}
                     <div className="Achieve">
                         <div className="Achieve-Head">stdio.h의 기록</div>
@@ -223,6 +306,7 @@ function Home(){
                             </div>
                         </Swiper>
                     </div>
+
                     {/* 졸업생 시작입니다 */}
                     <div className="Alumni">
                         <div className="Alumni-head">Alumni</div>
