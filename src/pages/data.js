@@ -14,10 +14,11 @@ export const AlumniData = [
 ];
 
 export const AchieveData = [
-    {name: "2023 RE-UP Cycle Thon\n(GREEN TECH MAKER)", prize: "최우수상 수상"},
-    {name: "2023 RE-UP Cycle Thon\n(GREEN TECH MAKER)", prize: "최우수상 수상"},
-    {name: "2023 RE-UP Cycle Thon\n(GREEN TECH MAKER)", prize: "최우수상 수상"},
-    {name: "2023 RE-UP Cycle Thon\n(GREEN TECH MAKER)", prize: "최우수상 수상"},
-    {name: "2023 RE-UP Cycle Thon\n(GREEN TECH MAKER)", prize: "최우수상 수상"},
-    {name: "2023 RE-UP Cycle Thon\n(GREEN TECH MAKER)", prize: "최우수상 수상"},
+    {name: "학술대회 논문 5편 발표", prize: "타학교 학생간 공동 연구 결과 포함"},
+    {name: "2024 Seoultech 학생설계전공 공모전", prize: "우수상 수상"},
+    {name: "2024 RE-DESIGN Thon(메이커톤)", prize: "우수상 수상"},
+    {name: "2024 디자인씽킹 경진대회", prize: "장려상 수상"},
+    {name: "2024 한이음 ICT 멘토링 공모전", prize: "입상"},
+    {name: "2024 서울과학기술대학교 겨울방학 특허캠프", prize: "장려상 수상"},
+    {name: " HP AI 워크스테이션 동아리 체험단 선정", prize: "(카이스트, 고려대, 성균관대 동아리, 수도권 대학생 연합동아리 포함 총 5개 동아리 선정)"},
 ];
