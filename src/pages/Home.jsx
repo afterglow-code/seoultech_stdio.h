@@ -230,8 +230,8 @@ function Home(){
 
                     {/* Home-2 */}
                     <div className="Mobsub">
-                        <div class="logo">
-                            <img src={`${process.env.PUBLIC_URL}/logo.png`}/>
+                        <div class="logo-box">
+                            <img src={`${process.env.PUBLIC_URL}/logo.svg`} className="Mob-logo"/>
                         </div>
 
                         <div class="intro">
