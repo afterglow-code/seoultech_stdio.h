@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/seoultech_stdio.h/static/css/main.d3924a85.css",
-    "main.js": "/seoultech_stdio.h/static/js/main.ff0784e2.js",
+    "main.css": "/seoultech_stdio.h/static/css/main.65d2d980.css",
+    "main.js": "/seoultech_stdio.h/static/js/main.da251f8c.js",
     "static/js/488.eb9aacfd.chunk.js": "/seoultech_stdio.h/static/js/488.eb9aacfd.chunk.js",
     "static/media/PretendardVariable.woff2": "/seoultech_stdio.h/static/media/PretendardVariable.2bc582461caf4e05b51d.woff2",
     "static/media/locus_sangsang.otf": "/seoultech_stdio.h/static/media/locus_sangsang.235205ffd2bfc0bcdf7f.otf",
     "index.html": "/seoultech_stdio.h/index.html",
-    "main.d3924a85.css.map": "/seoultech_stdio.h/static/css/main.d3924a85.css.map",
-    "main.ff0784e2.js.map": "/seoultech_stdio.h/static/js/main.ff0784e2.js.map",
+    "main.65d2d980.css.map": "/seoultech_stdio.h/static/css/main.65d2d980.css.map",
+    "main.da251f8c.js.map": "/seoultech_stdio.h/static/js/main.da251f8c.js.map",
     "488.eb9aacfd.chunk.js.map": "/seoultech_stdio.h/static/js/488.eb9aacfd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d3924a85.css",
-    "static/js/main.ff0784e2.js"
+    "static/css/main.65d2d980.css",
+    "static/js/main.da251f8c.js"
   ]
 }
