@@ -80,7 +80,7 @@ function Home(){
                                 </div>
                                 <div className="info-item">
                                     <span className="info-label">◉ 지원 가능 일시</span>
-                                    <span className="info-value">25.02.10 12:00 ~ 25.02.20 15:00</span>
+                                    <span className="info-value">25.02.24 00:00 ~ 25.03.07 23:59</span>
                                 </div>
                                 <button className="apply-button" onClick={() => window.open("https://forms.gle/sSPaucmjSrbQyga27")}>지원하기↗</button>
                             </div>
