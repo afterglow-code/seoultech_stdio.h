@@ -25,12 +25,30 @@ function Home(){
         });
     };
 
-    const homeRef = useRef(null);
+    
     const alumniRef = useRef(null);
     const aboutUsRef = useRef(null);
     const faqRef = useRef(null);
     const achieveRef = useRef(null);
 
+    const [homeRef, setHomeRef] = useState(pcHomeRef);
+    useEffect(() => {
+        // 화면 크기 변경될 때마다 ref 변경
+        setHomeRef(isPc ? pcHomeRef : mobHomeRef);
+    }, [isPc]);
+
+    const AutoText = ({ text }) => {
+        return (
+            <>
+                {text.split("\n").map((line, idx) => (
+                    <React.Fragment key={idx}>
+                        {line}
+                        <br />
+                    </React.Fragment>
+                ))}
+            </>
+        );
+    };
     return(
         <div className="Home">
             <PC>
