@@ -40,6 +40,7 @@ function Home(){
         setHomeRef(isPc ? pcHomeRef : mobHomeRef);
     }, [isPc]);
 
+    /* AutoText 
     const AutoText = ({ text }) => {
         return (
             <>
@@ -52,6 +53,41 @@ function Home(){
             </>
         );
     };
+    */
+    /* AutoText v2
+    const AutoText = ({ text }) => {
+        const createMarkup = (text) => {
+            const lines = text.split("\n").map(line => `${line}<br />`).join("");
+            return { __html: lines };
+        };
+    
+        return <div dangerouslySetInnerHTML={createMarkup(text)} />;
+    };
+    */
+    const parseText = (text) => {
+        const parts = text.split(/(@.*?@|₩.*?₩\(.*?\))/g);
+        return parts.map((part, idx) => {
+            if (part.startsWith('@') && part.endsWith('@')) {
+                return <b key={idx}>{part.slice(1, -1)}</b>;
+            } else if (part.startsWith('₩') && part.includes('₩(') && part.endsWith(')')) {
+                const linkText = part.slice(1, part.indexOf('₩('));
+                const url = part.slice(part.indexOf('₩(') + 2, -1);
+                return <a key={idx} href={url} className="boldlink">{linkText}</a>;
+            } else {
+                return part.split("\n").map((line, lineIdx) => (
+                    <React.Fragment key={`${idx}-${lineIdx}`}>
+                        {line}
+                        {lineIdx < part.split("\n").length - 1 && <br />}
+                    </React.Fragment>
+                ));
+            }
+        });
+    };
+    
+    const AutoText = ({ text }) => {
+        return <>{parseText(text)}</>;
+    };
+    
     return(
         <div className="Home">
             <PC>
