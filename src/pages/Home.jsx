@@ -6,7 +6,7 @@ import './Home.scss';
 import {Mobile, PC} from './Mediaquery.jsx';
 import Navbar from "./Navbar.jsx";
 import Footer from "./Footer.jsx";
-import { FAQData, AlumniData, AchieveData } from "./data.js";
+import { QnAData, FAQData, AlumniData, AchieveData } from "./data.js";
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
@@ -30,7 +30,7 @@ function Home(){
     const mobHomeRef = useRef(null);
     const alumniRef = useRef(null);
     const aboutUsRef = useRef(null);
-    const faqRef = useRef(null);
+    const faqRef = useRef(null); //36
     const achieveRef = useRef(null);
 
     const [homeRef, setHomeRef] = useState(pcHomeRef);
@@ -61,9 +61,97 @@ function Home(){
                     <div ref={pcHomeRef} className="Land">
                         <div>1번, 2번</div>
                     </div>
-                    {/* About us 시작입니다 */}
+                    {/*임영래About us 시작입니다 */}
+                      <div className="program-container">
+                        <h2 className="program-title">stdio.h 프로그램</h2>
+                        <p className="program-subtitle">
+                          이 외에도 여러분이 원하는 활동이 있는 경우<br />
+                          언제든지 팀을 구성해 진행할 수 있습니다.
+                        </p>
+                     <div className="program-cards">
+                       {/* 카드 1 */}
+                       <div className="program-card">
+                         <h3 className="program-card-title">장학금, 진로설계 길라잡이</h3>
+                         <p className="program-card-text">
+                           복잡한 장학선발 절차를 안내하고,<br/>
+                           장학선발 지원을 위한 자기소개서, 장학금 수혜 후기 등을 공유합니다.<br/>
+                           <br/>
+                           진로설계 길라잡이는<br/>
+                           다양한 진로들을 소개하고 준비방법을 공유합니다.
+                          </p>
+                        </div>
+        
+                       {/* 카드 2 */}
+                       <div className="program-card">
+                         <h3 className="program-card-title">전공, 기술 스터디</h3>
+                         <p className="program-card-text">
+                           전공 스터디에서는 <br/>
+                           공학수학, 신호 및 시스템, 전력전자, 딥러닝 등 <br/>
+                           전공 관련 소규모 스터디를 통해 전공이해도를 높입니다.<br/>
+                           <br/>
+                           기술 스터디에서는<br/>
+                           HW/FW, SW, ML/DL 등 각 직무별로 스터디를 진행하며며<br/>  
+                           SW팀에서는 동아리 웹페이지 제작, 운영을 진행할 예정입니다.
+                         </p>
+                       </div>
+
+                       {/* 카드 3 */}
+                       <div className="program-card">
+                         <h3 className="program-card-title">아두이노, 라즈베리파이 실습</h3>
+                         <p className="program-card-text">
+                           아두이노, 라즈베리파이 등을 이용해<br/>
+                           IOT 제어, 모터 제어 등 다양한 실습을 진행합니다.
+                         </p>
+                       </div>
+
+                       {/* 카드 4 */}
+                       <div className="program-card">
+                         <h3 className="program-card-title">공모전, 경진대회</h3>
+                         <p className="program-card-text">
+                           공모전, 경진대회를 통해 다양한 경험과 수상기회를 얻습니다.<br/>
+                           임베디드SW경진대회, 한이음 등 <br/>
+                           다양한 공모전, 경진대회에 참여중입니다.
+                         </p>
+                       </div>
+                     </div>
+                   </div>
+
+
+                        
 
                     {/* q&a 시작입니다 */}
+                    <div className="qna-container">
+                      {/* 제목/부제목 */}
+                      <h2 className="qna-title">여러분을 위한 Q&A</h2>
+                      <p className="qna-subtitle">
+                        여러분이 동아리에 지원하시기 전 자주 묻는 질문을 모아봤습니다
+                      </p>
+
+                      {/* QnA 목록 */}
+                      <div className="qna-list">
+                        {QnAData.map((item, idx) => (
+                          <div className="qna-item" key={idx}>
+                            {/* 질문 (왼쪽 말풍선) */}
+                            <div className="Q">
+                             <div className="Q-text">{item.question}</div>
+                            </div>
+
+                            {/* 답변 (오른쪽 말풍선) */}
+                            <div className="A">
+                              {/* 개행 처리 예시 */}
+                              {item.answer.split('\n').map((line, i) => (
+                                <div key={i} className="A-text">
+                                  {line}
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+  
+
+
 
                     {/* Achieve 시작입니다 */}
                     <div ref={achieveRef} className="PC-Achieve">
@@ -130,8 +218,9 @@ function Home(){
                         </div>
 
                     <Footer refs={{ homeRef, alumniRef, aboutUsRef, faqRef, achieveRef }}/>
-                </div>
+                </div> {/* closes .Home-PC */}
             </PC>
+       
 
             {/* Mobile 시작입니다 */}
             <Mobile>
@@ -216,7 +305,7 @@ function Home(){
                             <div className="button">
                                 <div className="custom-prev">
                                     <img className="b_size" src={`${process.env.PUBLIC_URL}/arrow-back-fill.svg`} alt="Previous" />
-                                </div>
+                                </div> 
                                 <div className="custom-next">
                                     <img className="b_size" src={`${process.env.PUBLIC_URL}/arrow-right-fill.svg`} alt="Next" />
                                 </div>
@@ -248,7 +337,8 @@ function Home(){
 
                 </div>                
             </Mobile>
-        </div>
+        </div> 
+        
         
     )
 }
