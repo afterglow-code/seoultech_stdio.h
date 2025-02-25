@@ -341,7 +341,7 @@
 .qna-container {
   width: 100%;
   height: 100vh;
-  min-height: 1300px;
+  min-height: 1400px;
   /* 예시: 부드러운 파스텔 그라디언트 */
   background: 
     radial-gradient(50% 50% at 50% 50%, #cfecd4, transparent),
@@ -354,7 +354,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 80px 20px;
+  padding: 80px 0px 80px 0px;
   box-sizing: border-box;
 }
 
@@ -410,12 +410,13 @@
   &::after {
     content: "";
     position: absolute;
-    left: -20px; /* 꼬리가 왼쪽 바깥으로 */
+    left: -15px; /* 꼬리가 왼쪽 바깥으로 */
     top: 30px;   /* 말풍선 높이에 따라 조정 */
     width: 0;
     height: 0;
     border: 10px solid transparent;
     border-right-color: #fff; /* 질문 말풍선 배경색과 동일 */
+    transform: rotate(-10deg);
   }
 }
 
@@ -433,7 +434,7 @@
   align-self: flex-end; /* 오른쪽 정렬 */
   max-width: 60%;
   padding: 16px;
-  background-color: #dceeff; /* 원하는 색상 */
+  background-color: #90A3BF; /* 원하는 색상 */
   border-radius: 20px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 
@@ -441,18 +442,18 @@
     content: "";
     position: absolute;
     right: -20px; /* 꼬리가 오른쪽 바깥으로 */
-    top: 50px;
+    top: 30px;
     width: 0;
     height: 0;
     border: 10px solid transparent;
-    border-left-color: #dceeff; /* 답변 말풍선 배경색과 동일 */
+    border-left-color: #90A3BF; /* 답변 말풍선 배경색과 동일 */
   }
 }
 
 .PC-A-text {
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.4;
-  color: #1a202c;
+  color: #fff;
 }
 
 

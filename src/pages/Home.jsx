@@ -233,26 +233,21 @@ function Home(){
                       </p>
 
                       {/* QnA 목록 */}
-                      <div className="qna-list">
-                        {QnAData.map((item, idx) => (
-                          <div className="qna-item" key={idx}>
-                            {/* 질문 (왼쪽 말풍선) */}
-                            <div className="PC-Q">
-                             <div className="PC-Q-text">{item.question}</div>
-                            </div>
-
-                            {/* 답변 (오른쪽 말풍선) */}
-                            <div className="PC-A">
-                              {/* 개행 처리 예시 */}
-                              {item.answer.split('\n').map((line, i) => (
-                                <div key={i} className="PC-A-text">
-                                  {line}
+                        <div className="qna-list">
+                            {QnAData.map((item, idx) => (
+                            <div className="qna-item" key={idx}>
+                                {/* 질문 (왼쪽 말풍선) */}
+                                <div className="PC-Q">
+                                <div className="PC-Q-text"><AutoText text={item.question} /></div>
                                 </div>
-                              ))}
+
+                                {/* 답변 (오른쪽 말풍선) */}
+                                <div className="PC-A">
+                                <div className="PC-A-text"><AutoText text={item.answer} /></div>
+                                </div>
                             </div>
-                          </div>
-                        ))}
-                      </div>
+                            ))}
+                        </div>
                     </div>
                     
                     {/* Achieve 시작입니다 */}
@@ -504,14 +499,14 @@ function Home(){
                         <div className="Alumni-container">
                             <div className="Alumni-info-head">
                                 <div className="te">Name</div>
-                                <div className="te">Contact</div>
+                                <div className="te">Major</div>
                                 <div className="te">Graduation</div>
                             </div>
 
                             {AlumniData.map((al) =>(
                                 <div className="Alumni-info">
                                     <div className="Alumni-info-text">{al.name}</div>
-                                    <div className="Alumni-info-text">{al.contact}</div>
+                                    <div className="Alumni-info-text">{al.major}</div>
                                     <div className="Alumni-info-text">{al.year}</div>
                                 </div>
                             ))}
