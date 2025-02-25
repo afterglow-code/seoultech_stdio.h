@@ -25,10 +25,16 @@
     변수 저장은
     $main : #ffff;
 */
-
+.boldlink{
+    font-weight: bold;
+    text-decoration: none;
+    font-family: "Pretendard Variable";
+    color: #486284;
+}
 //PC 시작
 .Land{
     height: 100vh;
+    min-height: 1150px;
     margin: 0;
     background: radial-gradient(50% 50% at 50% 50%, #cfecd4, rgba(255, 255, 255, 0)), 
                 radial-gradient(50% 50% at 50% 50%, #fffada, rgba(255, 255, 255, 0)), 
@@ -56,7 +62,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 700px; 
+    
     text-align: center;
 
     .sub-title {
@@ -136,7 +142,8 @@
     align-items: center;
     text-align: center;
     justify-content: center;
-    height: 900px;
+    height: 95vh;
+    min-height: 1150px;
     position: relative;
     padding: 50px 0;
 
@@ -151,6 +158,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        overflow: hidden;
     
         // 왼쪽 반원
         &::before {
@@ -258,11 +266,201 @@
     }
 }
 
+//PC About, FAQ 시작
+//aboutus 시작
+.program-container {
+  width: 100%;
+  height: 90vh;
+  min-height: 1150px;
+  padding: 120px 0px 120px 0px;
+  text-align: center; /* 기본 텍스트 중앙 정렬 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px; /* 제목/부제목, 카드그룹 간격 */
+}
+
+.program-title {
+  font-size: 24px;
+  letter-spacing: -0.02em;
+  line-height: 150%;
+  font-weight: 600;
+  font-family: 'Pretendard Variable';
+  color: #486284;
+}
+
+.program-subtitle {
+  font-family: 'Pretendard Variable';
+  font-size: 16px;
+  line-height: 150%;
+  color: #1a202c;
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+/* 카드 컨테이너 */
+.program-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2열 그리드 */
+  gap: 40px; /* 카드 사이 간격 */
+  justify-items: center; /* 카드 내용도 수평 중앙 정렬 */
+}
+
+/* 개별 카드 */
+.program-card {
+  width: 600px;
+  height: 350px;
+  border-radius: 50px;
+  background-color: #fafbfd;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.program-card-title {
+  font-size: 20px;
+  line-height: 130%;
+  font-weight: 500;
+  font-family: 'Pretendard Variable';
+  color: #1a202c;
+}
+
+.program-card-text {
+  font-size: 15px;
+  line-height: 150%;
+  font-weight: 300;
+  font-family: 'Pretendard Variable';
+  color: #486284;
+  text-align: center;
+}
+//PC Q&A 시작
+
+/* 1) 전체 컨테이너에 그라디언트 배경 */
+.qna-container {
+  width: 100%;
+  height: 100vh;
+  min-height: 1400px;
+  /* 예시: 부드러운 파스텔 그라디언트 */
+  background: 
+    radial-gradient(50% 50% at 50% 50%, #cfecd4, transparent),
+    radial-gradient(50% 50% at 50% 50%, #fffada, transparent),
+    #ced7e4;
+  background-size: 200% 200%;
+  background-position: 0% 0%;
+  animation: gradientAnimation 10s ease infinite;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px 0px 80px 0px;
+  box-sizing: border-box;
+}
+
+/* 그라디언트 애니메이션 */
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+/* 2) 제목/부제목 중앙 정렬 */
+/* 전체 QnA 리스트 */
+.qna-title {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 75px;
+}
+.qna-subtitle {
+  text-align: center;
+  font-size: 14px;
+  margin-bottom: 40px;
+}  
+.qna-list {
+  display: flex;
+  //max-width: 1000px;
+  flex-direction: column;
+  gap: 30px; /* QnA 쌍 사이 간격 */
+}
+
+/* 각 질문/답변 쌍 */
+.qna-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* 질문과 답변 사이 간격 */
+}
+
+/* 질문(.Q) 말풍선 - 왼쪽 */
+.PC-Q {
+  position: relative;
+  align-self: flex-start; /* 왼쪽 정렬 */
+  max-width: 80%;
+  padding: 15px;
+  background-color: #fff; /* 원하는 색상 */
+  border-radius: 20px;    /* 말풍선 둥근 모서리 */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: -15px; /* 꼬리가 왼쪽 바깥으로 */
+    top: 30px;   /* 말풍선 높이에 따라 조정 */
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-right-color: #fff; /* 질문 말풍선 배경색과 동일 */
+    transform: rotate(-10deg);
+  }
+}
+
+.PC-Q-text {
+  font-size: 16px;
+  letter-spacing: -0.03em;
+  line-height: 150%;
+  font-family: 'Pretendard Variable';
+  color: #1a202c;
+}
+
+/* 답변(.A) 말풍선 - 오른쪽 */
+.PC-A {
+  position: relative;
+  align-self: flex-end; /* 오른쪽 정렬 */
+  max-width: 60%;
+  padding: 16px;
+  background-color: #90A3BF; /* 원하는 색상 */
+  border-radius: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+
+  &::after {
+    content: "";
+    position: absolute;
+    right: -20px; /* 꼬리가 오른쪽 바깥으로 */
+    top: 30px;
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-left-color: #90A3BF; /* 답변 말풍선 배경색과 동일 */
+  }
+}
+
+.PC-A-text {
+  font-size: 16px;
+  line-height: 1.4;
+  color: #fff;
+}
+
 
 //PC Achieve 시작
 .PC-Achieve{
     background-color: #fff;
-    height: 700px;
+    height: 800px;
     position: relative;
     z-index: 0;
 }
@@ -339,6 +537,7 @@
     flex-direction: column;
     gap: 70px;
     align-items: center;
+    height: 300px;
 
 }
 .pc-Alumni-container{
