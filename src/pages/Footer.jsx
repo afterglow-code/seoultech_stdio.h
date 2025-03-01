@@ -20,6 +20,7 @@ function Footer({refs}){
                         <div className="pc-left-box">
                             <div className="logo-text">stdio.h</div>
                             <div className="contact">회장 장세영<br/>010-7352-2030</div>
+                            <img src={`${process.env.PUBLIC_URL}/instagram.svg`} className="insta" onClick={() => window.open("https://www.instagram.com/stdio.h_ict?igsh=MXAyZDh5cjBtZTRpNg==")}></img>
                         </div>
                         
                         <div className="pc-right-box">
