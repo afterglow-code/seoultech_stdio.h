@@ -9,6 +9,7 @@ export const FAQData = [
 
 export const AlumniData = [
     {name: "황준성", contact: "hjs3290@seoultech.ac.kr", major:"전력전자", year: "2025.02"},
+    {name: "이현수", contact: "dhqjaos99@naver.com", major:"혼성 회로 설계", year: "2024.02"},
     
 ];
 
